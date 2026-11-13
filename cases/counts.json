@@ -1,0 +1,142 @@
+{
+  "jrc-research": {
+    "reference_document": "Perego et al., Using DCAT-AP for research data (SDSVoc 2016, paper 27)",
+    "base": "DCAT-AP 1.1",
+    "rows": 11,
+    "atoms": 18,
+    "atoms_by_stratum": {
+      "content": 17,
+      "system": 1
+    },
+    "atoms_by_status_in_source": {
+      "open_issue": 9,
+      "requirement": 9
+    },
+    "atoms_by_relation_to_base": {
+      "beyond_base": 9,
+      "extends_base": 1,
+      "not_term_level": 1,
+      "partly_base": 1,
+      "restates_base": 3,
+      "tightens_base": 3
+    },
+    "atoms_restating_the_base": 3,
+    "atoms_reuse_or_alignment_rule": 0,
+    "rq1_scored_by_default": 17,
+    "rq1_scored_by_default_without_restatements": 14
+  },
+  "statdcat": {
+    "reference_document": "StatDCAT-AP 1.0.0 (2016-12-15)",
+    "base": "DCAT-AP 1.1",
+    "rows": 22,
+    "atoms": 27,
+    "atoms_by_stratum": {
+      "content": 16,
+      "profile": 9,
+      "system": 2
+    },
+    "atoms_by_status_in_source": {
+      "deferred": 3,
+      "guidance": 4,
+      "requirement": 20
+    },
+    "atoms_by_relation_to_base": {
+      "beyond_base": 9,
+      "extends_base": 2,
+      "not_term_level": 11,
+      "restates_base": 4,
+      "tightens_base": 1
+    },
+    "atoms_restating_the_base": 4,
+    "atoms_reuse_or_alignment_rule": 4,
+    "rq1_scored_by_default": 14,
+    "rq1_scored_by_default_without_restatements": 10
+  },
+  "geodcat": {
+    "reference_document": "GeoDCAT-AP 1.0 (2015-12-23)",
+    "base": "DCAT-AP 1.1",
+    "rows": 46,
+    "atoms": 56,
+    "atoms_by_stratum": {
+      "content": 37,
+      "profile": 17,
+      "system": 2
+    },
+    "atoms_by_status_in_source": {
+      "requirement": 56
+    },
+    "atoms_by_relation_to_base": {
+      "beyond_base": 10,
+      "extends_base": 6,
+      "not_term_level": 19,
+      "partly_base": 4,
+      "restates_base": 17
+    },
+    "atoms_restating_the_base": 17,
+    "atoms_reuse_or_alignment_rule": 12,
+    "rq1_scored_by_default": 37,
+    "rq1_scored_by_default_without_restatements": 20
+  },
+  "healthdcat": {
+    "reference_document": "HealthData@EU Pilot D6.2 (2024-09-30)",
+    "base": "DCAT-AP 3.0.0",
+    "rows": 69,
+    "atoms": 121,
+    "atoms_by_stratum": {
+      "content": 91,
+      "profile": 11,
+      "system": 19
+    },
+    "atoms_by_status_in_source": {
+      "deferred": 1,
+      "proposed": 44,
+      "requirement": 76
+    },
+    "atoms_by_relation_to_base": {
+      "beyond_base": 41,
+      "extends_base": 3,
+      "not_term_level": 30,
+      "partly_base": 1,
+      "restates_base": 12,
+      "tightens_base": 33,
+      "unresolved": 1
+    },
+    "atoms_restating_the_base": 12,
+    "atoms_reuse_or_alignment_rule": 6,
+    "rq1_scored_by_default": 89,
+    "rq1_scored_by_default_without_restatements": 77
+  },
+  "mobilitydcat": {
+    "reference_document": "NAPCORE 4.4.2.1 Requirement analysis v1.0 (2022), Table 1",
+    "base": "DCAT-AP 2.0.1",
+    "rows": 40,
+    "atoms": 98,
+    "atoms_by_stratum": {
+      "content": 40,
+      "profile": 47,
+      "system": 11
+    },
+    "atoms_by_status_in_source": {
+      "requirement": 98
+    },
+    "atoms_by_relation_to_base": {
+      "beyond_base": 19,
+      "extends_base": 6,
+      "not_term_level": 58,
+      "restates_base": 5,
+      "tightens_base": 10
+    },
+    "atoms_restating_the_base": 5,
+    "atoms_reuse_or_alignment_rule": 10,
+    "rq1_scored_by_default": 39,
+    "rq1_scored_by_default_without_restatements": 34
+  },
+  "all": {
+    "rows": 188,
+    "atoms": 320,
+    "atoms_restating_the_base": 41,
+    "atoms_reuse_or_alignment_rule": 32,
+    "rq1_scored_by_default": 196,
+    "rq1_scored_by_default_without_restatements": 155
+  }
+}
