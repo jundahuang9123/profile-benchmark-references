@@ -1,58 +1,45 @@
-# mobilityDCAT / NAPCORE
+# mobilityDCAT-AP (`mobilitydcat`)
 
-Use the **2022 requirements exercise**, which initially called the proposed profile
-napDCAT-AP. The main reference is [NAPCORE Requirements Analysis v1.0](https://napcore.eu/wp-content/uploads/2022/08/NAPCORE-4.4.2.1-Requirement-analysis_v1.0.pdf),
-by Petr Bureš, Peter Lubrich and colleagues. The cover says June 14, 2022; the document
-history says final release June 20. The official downloaded PDF has 57 physical pages
-and contains the main report plus its annexes. The 2024 M2.7 report is not substituted.
+Requirements for a metadata profile for mobility data, consolidated by NAPCORE in 2022, and the first release of the profile that followed. RQ1 role: test case. Release and base are confirmed. This is the only case whose profile comes with SHACL shapes.
 
-## Available corpus
+## Requirements
 
-Declared use cases come from `use-cases.json`; all 12 statements, IDs and their order match saved run `run-23e6df696aca4dbe9f5649cc4cbbf855`'s frozen snapshot.
+| File | Content |
+|---|---|
+| `requirements/reference-set.json` | 40 rows and 98 atoms, as in RQ1 version 3 |
+| `requirements/atoms.csv` | flat view of the atoms, generated |
 
-`input-raw/` contains original EU legal/policy texts, historical DCAT/DCAT-AP baselines,
-public INSPIRE guidance, the FAIR report and cost study, NISO's noncommercial primer,
-the licensed 2021 SPRINT paper, prior GeoDCAT, and factual synopses of CMC's 32 concepts
-and SPRINT D2.3's 12 competency tasks. Those last two are explicitly **paraphrases**, not
-original full documents. Their source versions predate the 2022 exercise.
+- 40 content, 47 profile and 11 system atoms, all with the status requirement. One content atom is merged into another for scoring (`Req-24.1` into `Req-19.7`).
+- Source: Table 1 of *NAPCORE Requirements Analysis for a new Metadata Specification*, v1.0 (cover date 14 June 2022, final release 20 June 2022), <https://napcore.eu/wp-content/uploads/2022/08/NAPCORE-4.4.2.1-Requirement-analysis_v1.0.pdf>. Cited only: no redistribution licence was established, so there is no copy here.
+- The rows keep all 40 identifiers of Table 1. Each atom's `mobility` block keeps the type and importance NAPCORE gave the row and the modal verb of its wording.
+- The report calls the planned profile napDCAT-AP. That name appears in `table1_text` of the rows and in one atom statement (`Req-39.2`).
+- The anchor quotes of this case were read from the live document and not checked against a stored copy (`anchor_check`).
 
-`input-preconsolidation/` contains curator representations of all labelled Annex 1
-partner rows, the named Annex 2 review-group observations, and a partial published
-SEMIC/CMC/expert-observation synopsis. These are B inputs, never raw-evidence A inputs.
-No final Table 1 IDs or answer mappings are supplied in B.
+## Published profile
 
-`reference-requirements/consolidated-requirements.json` preserves all **40** original
-Table 1 IDs and their four types and mandatory/optional labels. Statements are curator
-paraphrases, with compoundness preserved. There are 8 General, 5 Existing Vocabularies,
-22 Content and 5 Implementation rows; 32 mandatory and 8 optional. Check wording and
-scope against the original table before final annotation. The separately saved
-mobilityDCAT-AP 1.0.0 ReSpec HTML is a later **final-profile reference**, not a runtime input;
-it is source HTML with external resources, not a self-contained rendered publication.
+mobilityDCAT-AP 1.0.0, a NAPCORE Recommendation of 16 October 2023. Source: `mobilityDCAT-AP/mobilityDCAT-AP`, folder `releases/1.0.0`, commit `fc6cb37` (5 October 2026). Licence: CC BY 4.0.
 
-## Count and reconstruction limitations
+| File in `profile/` | Content |
+|---|---|
+| `index.html` | the specification as exported by ReSpec; style sheet and logos load from the web; the same bytes RQ1 held as `mob-final.html` |
+| `mobilitydcat-ap.ttl`, `.rdf`, `.jsonld` | the vocabulary: 2 classes and 12 properties in the namespace `http://w3id.org/mobilitydcat-ap#` |
+| `mobilitydcat-ap_shacl_shapes.ttl` | SHACL shapes: 14 node shapes with a target class each |
+| `README.md` | upstream release note with the licence |
 
-The report body states **53** partner requirements from six countries. The published
-annex actually contains **60 labelled rows**: DE 17, BE 4, CY 1, CZ 5, IT 27, GR 6. DE-00
-and DE-06 duplicate the same need; rows are not deduplicated during acquisition. Italy's
-original Req-* IDs are country-qualified to avoid confusing them with final Table 1 IDs.
-This discrepancy is preserved in `provenance/napcore-retrieval-audit.json`.
+- The specification says that it extends DCAT-AP 2.0.1 with 2 classes and 48 properties, some of them used on several classes. The vocabulary files define the 2 classes and 12 properties that are its own.
+- Upstream changed the folder after the publication date: `index.html` last on 10 November 2023, the SHACL shapes on 29 January 2024.
+- The upstream repository was restructured after the pinned commit. Its main branch no longer has a `releases/` folder; the pinned commit still serves the files.
 
-The report mentions 50 reviewed resources and 18 summaries. Annex 2 exposes 17 numbered
-source groups after its methodology, not a complete copy of the private source folder.
-The manifest inventories the named groups and unresolved variants; no claim is made that
-all 50 resources were acquired. Exact national-profile versions, all training recordings,
-LOD-RoadTran reports, the 2017 INSPIRE version, and private interviews remain gaps. One official SEMIC 2021 training deck is saved; it is
-not claimed to reconstruct the full Academy webinar series. The deck is not a runtime
-input: its page 19, the DCAT-AP UML figure, has no extractable text, and the figure's
-content is stated in the DCAT-AP 2.0.0 and 2.1.0 specifications, which are. The served DCAT-AP 2.1.0
-release-path PDF is also saved, with its internal draft-status metadata discrepancy
-recorded in the manifest.
+Inconsistencies in the upstream files, kept as published:
 
-The original NAPCORE report, CMC and SPRINT D2.3 were readable during curation, but no
-explicit full-document redistribution licence was established. They are citation-only;
-curator factual summaries are supplied where feasible. Raw evaluation therefore measures
-a **partial public reconstruction**. Consolidation is stronger in row coverage but still
-uses paraphrases and incomplete expert/review context. Private testimony is not fabricated.
+- The SHACL shapes spell one property `mobilitydcatap:intentedInformationService`. The vocabulary files spell it `intendedInformationService`; the specification has both spellings.
+- The shape for the mobility data standard targets `mobilitydcatap:mobilityDataStandard`, which is the IRI of the property. The vocabulary names the class `mobilitydcatap:MobilityDataStandard`.
+- The three serialisations of the vocabulary are not identical in triples: Turtle and JSON-LD parse to 675, RDF/XML to 682.
 
-See [manifest](provenance/manifest.json), [gaps](provenance/GAPS.md),
-[methodology](../BENCHMARK-METHODOLOGY.md), and [runtime allowlists](../runtime-inputs.json).
+## Base
+
+DCAT-AP 2.0.1 ([`bases/dcat-ap-2.0.1`](../../bases/README.md)). Section 1.3 of the specification says the DCAT-AP version it is based on is 2.0.1 of 8 June 2020.
+
+## Notes
+
+- Later releases: 1.0.1 (4 April 2024, bug fixes) and 1.1.0 (17 January 2025). They are not used.

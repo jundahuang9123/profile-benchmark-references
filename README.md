@@ -1,47 +1,91 @@
-# Requirements benchmark references
+# Profile benchmark references
 
-Curated reference requirements, source traceability, adjudication documentation and supporting source corpus for requirement-extraction benchmarks.
+Reference requirements for five DCAT application profiles, each paired with the profile that was published in answer to them and with the DCAT-AP release that profile extends.
 
-This standalone corpus combines independently collected requirement sets, source checks and provisional adjudication. The original `benchmark-data/` layout is retained. Curator identifiers and upstream repository identifiers have been replaced with neutral labels for later anonymous distribution. `IMPORT-PROVENANCE.json` records integrity hashes for the sanitized files.
+The material is laid out for benchmarks of requirements-driven profile generation (RQ2): requirement atoms go in, the published profile is held out, and what a method produces is compared with what the published profile adds to its base.
 
-See [anonymous export instructions](ANONYMIZATION.md) to create a history-free copy for a separate repository. The current hosting account and earlier Git commits are identifiable.
-
-## Start here
-
-- [Merged reference sets v3](benchmark-data/reference-sets-v3/README.md): reference sets, atomic scoring units, source anchors and evidence labels.
-- [Standard form of the atom statements](benchmark-data/reference-sets-v3/standard-form/README.md) and [atom types](benchmark-data/reference-sets-v3/ATOM-TYPES.md): how every atom is worded, how its type (content, profile, system) was assigned, and the owner's review of each batch.
-- [Input-label review, 1 November 2026](docs/reviews/2026-11-01-label-review.md): assistant recommendations for all 196 scored atoms, with the original labels retained. These recommendations have not been applied to benchmark labels or scores.
-- [Evidence-label adjudication, 3 November 2026](benchmark-data/reference-sets-v3/evidence-review/README.md): the 22 October AI labels of the 196 scored atoms reviewed by two independent AI annotators (one blind) and adjudicated by the owner; applied as `input_evidence.human_review` and to `atoms-review.csv`. Claude's blind review table: [docs/reviews/2026-11-01-claude-blind-review.csv](docs/reviews/2026-11-01-claude-blind-review.csv).
-- [Base-relation adjudication, 11 November 2026](benchmark-data/reference-sets-v3/base-relation-review/README.md): a blind AI review of the relation to the DCAT-AP base of the 196 scored atoms; the 18 atoms on which it differs from the earlier code on whether the atom restates the base were adjudicated by the curator; applied as `relation_to_base`, `restates_dcat_ap` and `relation_review`.
-- [Corpus guide](benchmark-data/README.md) and [methodology](benchmark-data/BENCHMARK-METHODOLOGY.md).
-- [Review and provisional adjudication](benchmark-data/reference-sets-v3/CODEX-REVIEW-2026-10-23.md).
-- [Supplement tables and PDF](benchmark-data/reference-sets-v3/supplement/README.md).
-- [Mock benchmark](benchmark-data/reference-sets-v3/mock-benchmark/README.md): development exercise using machine reviewers.
-- [Build history](benchmark-data/reference-sets-v3/history/README.md).
-
-## Validation
-
-Run from this repository root:
-
-```sh
-python3 benchmark-data/validate_corpus.py
-python3 benchmark-data/reference-sets-v3/validate_v3.py
-(cd benchmark-data/reference-sets-v3/mock-benchmark && python3 verify.py)
-python3 -B tools/trace/check_backfill.py
+```mermaid
+flowchart LR
+    A["Requirement atoms<br/>cases/*/requirements"] --> M(["Method under test"])
+    B["Base DCAT-AP release<br/>bases/*"] --> M
+    M --> G["Generated profile"]
+    P["Published profile, held out<br/>cases/*/profile"] --> D["What the profile adds to its base"]
+    B --> D
+    G --> C{{"Compare"}}
+    D --> C
 ```
 
-Since the base-relation adjudication of 11 November 2026, the mock check reports seven differences when it reads the current sets. All are in one slice of the JRC mock runs (supported atoms without restatements), where one atom no longer counts as a restatement. The mock results are a historical exercise and were not recomputed; the check passes against the sets as they were before (set `RQ1_REF` to a copy of that `reference-sets-v3` folder).
+This repository is a fork of the RQ1 reference library (`requirements-benchmark-references`) at commit `38ea671` of 12 November 2026. The requirement sets are unchanged, byte for byte. Extraction inputs, benchmark runs and review records were removed; the published profiles and their bases were added. [docs/fork-notes.md](docs/fork-notes.md) lists every change.
 
-See the archived [import verification](docs/import/IMPORT-VALIDATION.md): v3 and mock checks pass; the older corpus validator currently reports failures inherited from the source snapshot. These historical reports are not a current whole-corpus approval.
+## The five cases
 
-The trace checker requires the published `ref-trace-baseline` tag and its history. Use a full clone with tags (or `git fetch --tags` in an existing clone). Historical trace locators resolve against that baseline, even when a report has since moved. The history-free anonymous export has a more limited verification scope; see [anonymous export instructions](ANONYMIZATION.md).
+| Case | Requirements | Requirement source | Published profile | Profile in machine-readable form | Base |
+|---|---|---|---|---|---|
+| [jrc-research](cases/jrc-research/README.md) | 11 rows, 18 atoms | Workshop paper of Nov 2016 (cited, not copied) | DCAT-AP-JRC Version 1, 3 Jul 2019 (**verify**) | No: tables in HTML | DCAT-AP 1.1 (**verify**) |
+| [statdcat](cases/statdcat/README.md) | 22 rows, 27 atoms | StatDCAT-AP 1.0.0 report | StatDCAT-AP 1.0.0, 15 Dec 2016 | RDF with usage notes, no SHACL | DCAT-AP 1.1 |
+| [geodcat](cases/geodcat/README.md) | 46 rows, 56 atoms | GeoDCAT-AP 1.0 specification | GeoDCAT-AP 1.0, 23 Dec 2015 | No: tables in PDF and DOCX | DCAT-AP 1.1 |
+| [healthdcat](cases/healthdcat/README.md) | 69 rows, 121 atoms | HealthData@EU Pilot D6.2, 30 Sep 2024 | HealthDCAT-AP pilot draft as of 20 Sep 2024 (**verify**) | No: tables in HTML | DCAT-AP 3.0.0 |
+| [mobilitydcat](cases/mobilitydcat/README.md) | 40 rows, 98 atoms | NAPCORE requirement analysis v1.0, 2022 (cited, not copied) | mobilityDCAT-AP 1.0.0, 16 Oct 2023 | RDF and SHACL | DCAT-AP 2.0.1 |
+| **All** | 188 rows, 320 atoms | | | | |
 
-Install Poppler (`pdftotext`) to verify PDF quotations. Full PDF parsing by the corpus validator also requires `pypdf` and `--deep-pdf`.
+The profile releases are the ones that go with the requirement sources RQ1 froze, not the newest ones. **verify** marks a choice that was made while this repository was assembled and that the curator has not confirmed; the three of them are listed under [Open points](#open-points). The evidence for every release and base is in [docs/versions.md](docs/versions.md).
 
-Reference sets and evaluator annotations must stay outside extraction inputs, prompts and retrieval. The corpus is partial; AI evidence labels and provisional adjudications are not independent human validation. See the linked methodology for limitations and development-case exposure.
+In RQ1, jrc-research and statdcat were development cases and the other three were test cases (curator's statement of 12 November 2026).
 
-The historical sets, raw label outputs, provisional adjudications, trace records and mock exercise are retained for reproducibility. The mock results predate the standardized statements and are a historical development exercise, not new results for the revised wording. Archived import reports live under `docs/import/`; current benchmark files and their integrity manifest retain their established paths.
+## Layout
+
+```text
+benchmark.json            index: case -> requirements, profile, base, upstream source and commit
+SHA256SUMS                digest of every data file under cases/ and bases/
+cases/<case>/
+    README.md             what the case holds and what is open
+    requirements/         reference-set.json (rows and atoms, as in RQ1) and atoms.csv (flat view)
+    profile/              the published profile; upstream files, unchanged
+    provenance/           licence evidence, where a file needs it
+cases/atoms.csv           the atoms of all cases in one table
+cases/counts.json         counts per case
+cases/term-check.csv      atom statements that carry a term or name their target profile
+cases/rq1-row-coding.csv  earlier coding of 75 rows against profile terms; not gold
+bases/<id>/               the DCAT-AP releases the profiles extend; upstream files, unchanged
+docs/                     data dictionary, version evidence, fork notes
+tools/                    fetch_upstream.py, build_views.py, validate.py
+```
+
+Every file in a `profile/` or `bases/<id>/` folder is a copy of an upstream file under its upstream name. [bases/README.md](bases/README.md) describes the bases.
+
+## Using it
+
+- **Input.** The `statement` of an atom is the requirement in one sentence. No statement carries an IRI or a prefixed name. Two system atoms name their target profile (`cases/term-check.csv`).
+- **Held out.** Everything else stays on the evaluator's side: the other fields of an atom (several quote the profile or name its terms), the `profile/` folders, `cases/rq1-row-coding.csv` and the READMEs. A method may see the base of a case; it must not see the target profile.
+- **Reference.** A generated profile is compared with the difference between the published profile and its base. That difference is not in this repository yet.
+- **Selection.** `stratum`, `status_in_source`, `relation_to_base` and `scored_by_default` let a run choose its atoms. They are RQ1's labels; which atoms RQ2 uses is not decided here.
+
+Field by field: [docs/data-dictionary.md](docs/data-dictionary.md).
+
+## What is here and what is not
+
+- The requirements are complete as RQ1 version 3 has them. Their status is RQ1's: merged sets with a provisional adjudication of the reviewed items, not adjudicated independently as a whole.
+- All five profiles and the bases are stored with their upstream commit and digest. For statdcat, geodcat and mobilitydcat the release and the upstream commit are the ones RQ1 had pinned.
+- Only mobilityDCAT-AP 1.0.0 has SHACL shapes. StatDCAT-AP 1.0.0 has an RDF description with obligations and cardinalities in usage notes. For the other three profiles the constraints exist only as tables in the specification, so their difference to the base has to be built from those tables.
+- Not here: gold differences (deltas), an alignment of atoms to profile elements, counterfactual atoms, and Construct-DCAT, the unseen case, whose requirements are not in the RQ1 library.
+
+## Open points
+
+1. **jrc-research, profile.** The requirements come from a paper of November 2016. The earliest public specification of DCAT-AP-JRC is Version 1 of July 2019. Nothing from 2016 was found.
+2. **jrc-research, base.** RQ1 records DCAT-AP 1.1. Version 1 says it is based on DCAT-AP 1.2.1, GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1. DCAT-AP 1.2.1 is stored in `bases/` for that reason.
+3. **healthdcat, profile.** The pilot published an unversioned draft. The copy here is its last state before the date of D6.2. The state at the date of D6.1 (29 April 2024) has the same terms of its own, differs in about 500 lines and was not copied.
+
+## Check and rebuild
+
+```sh
+python3 tools/validate.py                 # offline: index, checksums, reference sets, views, RDF, links
+sha256sum -c SHA256SUMS                   # the same digests with coreutils
+python3 tools/fetch_upstream.py --check   # compare every profile and base file with its upstream commit
+python3 tools/build_views.py              # rebuild atoms.csv, counts.json and term-check.csv
+```
+
+The tools use the Python standard library. `validate.py` also parses the RDF files when `rdflib` is installed. After a change under `cases/` or `bases/`, run `python3 tools/validate.py --write-checksums`.
 
 ## Attribution and reuse
 
-Source documents retain their individual notices and reuse conditions. See [third-party notices](benchmark-data/THIRD-PARTY-NOTICES.md) and each case's provenance manifest. No blanket licence overrides those terms.
+Source documents keep their own notices and reuse conditions; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). No blanket licence overrides those terms.

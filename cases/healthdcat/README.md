@@ -1,44 +1,49 @@
-# HealthDCAT-AP
+# HealthDCAT-AP (`healthdcat`)
 
-This case freezes the HealthData@EU pilot's **2023/2024** evidence and September 2024
-reference, rather than mixing it with current profile releases. The official
-[Health Data Hub project page](https://health-data-hub.fr/page/healthdataeu-pilot)
-links to archival Zenodo deposits. Their explicit CC BY 4.0 metadata is saved alongside
-the reports; manuscript dates and March 2025 deposit dates are distinguished.
+Requirements for describing health datasets for secondary use, taken from deliverable D6.2 of the HealthData@EU pilot, and the pilot's draft of the profile as it stood when D6.2 was written. RQ1 role: test case. The choice of the draft's state is open; see the end.
 
-## Available corpus and separation
+## Requirements
 
-`input-raw/` includes [M6.1 landscape analysis](https://zenodo.org/records/15089787)
-(2023-03-30), the 2022 EHDS proposal, GDPR, and pre-2023 DCAT/DCAT-AP baseline documents.
-The report describes the catalogue landscape, forms and sandbox before TWG design.
-The exact minor DCAT-AP 2.1.1 baseline is a curator selection; M6.1 names v2 generally.
+| File | Content |
+|---|---|
+| `requirements/reference-set.json` | 69 rows and 121 atoms, as in RQ1 version 3 |
+| `requirements/atoms.csv` | flat view of the atoms, generated |
+| `requirements/d6.2-requirements-and-profile.pdf` | the source: D6.2, 98 pages |
 
-[Full TWG M6.2 minutes](https://zenodo.org/records/15095515) (2024-01-31) are kept in
-`provenance/`, because they mix input, candidate properties, decisions and final drafts.
-`input-preconsolidation/twg-observations.json` supplies only eight scoped curator
-summaries of needs/discussion topics from the 2023 sessions. It is a **partial** B corpus,
-not the complete EU Survey responses or the original stakeholder submissions.
+- 91 content, 11 profile and 19 system atoms. 76 are requirements, 44 are proposals and 1 is deferred.
+- D6.2 gives the rationale of the profile and recommends how to develop it further. The 44 proposals (38 of them content atoms) are such recommendations. A proposal need not have a counterpart in the draft of that time: `healthdcatap:reviewDate` and `healthdcatap:qualityAnnotation`, for example, are named in D6.2 and absent from the draft.
+- Source: *HealthData@EU Pilot, Deliverable 6.2, HealthDCAT-AP: Recommendations on further development and deployment for possible EU-wide uptake*, dated 30 September 2024, <https://zenodo.org/records/15085025>. The PDF file itself was produced on 14 November 2024.
+- Licence: CC BY 4.0 according to the Zenodo deposit (`provenance/d6.2-zenodo-deposit.json`). The front matter of the PDF still says all rights reserved; RQ1 keeps both statements on record.
 
-`reference-requirements/` contains [D6.2](https://zenodo.org/records/15085025)
-(2024-09-30), the D6.1 delivery document (a short deliverable, not a complete standalone
-specification), and **16 curated rationale requirements** linked to D6.2 sections. This
-subset is not an official enumerated complete gold set and requires independent review.
-The [D6.2 functional-analysis annex](https://zenodo.org/records/15089825) is provenance-only:
-it follows the extension and its personas are not assumed independent upstream evidence.
+## Published profile
 
-D6.2 uses the 2024 EHDS compromise with provisional article numbering. The 2025 adopted
-regulation is preserved only in provenance. Do not score the historical reference against
-that later law without a separately versioned experiment.
+The pilot published the profile as a draft at healthdcat-ap.github.io, without version numbers. D6.1 and D6.2 both name that site as the place of publication. The copy here is the whole repository `HealthDCAT-AP/HealthDCAT-AP.github.io` at commit `ecabf8c` of 20 September 2024, the last commit on or before the date of D6.2. Licence: CC BY 4.0 (stated in `index.html`).
 
-## Limitations
+| File in `profile/` | Content |
+|---|---|
+| `index.html` | the draft specification as ReSpec source; a browser needs network access to render it |
+| `HealthDCAT-AP 3.0.0.drawio.png`, `HealthDCAT-AP 2.1.1.drawio.png` | class diagrams, one extending DCAT-AP 3.0 and one extending DCAT-AP 2.x |
+| `README.md`, `logo.png`, `Co-funded_by_the_European_Union.png` | the rest of the repository at that commit |
 
-Original survey exports, complete independent use-case submissions, private recordings
-and missing stakeholder conversations were not recovered. D6.2's methodology includes a
-September–December 2024 statement despite its September 2024 manuscript date; use the
-actual dated 2023 M6.2 sessions rather than assuming that sentence establishes chronology.
-Some PDFs say all rights reserved while the later deposits explicitly declare CC BY 4.0;
-both notices and the deposit metadata are retained. Current release 5 is not silently
-substituted for the 2024 profile.
+- No RDF vocabulary and no SHACL shapes existed at that date. Classes and properties are in 18 HTML tables with the columns property, range, cardinality, definition, usage, DCAT and reuse, the layout DCAT-AP 3.0.0 uses.
+- The draft uses 14 terms with the prefix `healthdcatap:`, some spelt with varying capitalisation. Its namespace table gives no IRI for that prefix.
+- The date in the page's ReSpec settings stays 22 December 2023 from April to December 2024, so it does not date the content.
+- `provenance/d6.1-profile-delivery.pdf` is deliverable D6.1 (30 April 2024, 3 pages). It delivers the profile by pointing to the site. Its licence evidence is `provenance/d6.1-zenodo-deposit.json`.
+- The site was taken offline on 22 September 2025 and the specification moved to the European Commission's platform, where it has numbered releases. Those are later documents and are not used.
 
-See [manifest](provenance/manifest.json), [gaps](provenance/GAPS.md),
-[methodology](../BENCHMARK-METHODOLOGY.md), and [runtime allowlists](../runtime-inputs.json).
+## Base
+
+DCAT-AP 3.0.0 ([`bases/dcat-ap-3.0.0`](../../bases/README.md)), as RQ1 records; D6.2 refers to DCAT-AP 3.0 throughout. The draft says its requirements are compatible with DCAT-AP 2 and with DCAT-AP 3.0.0.
+
+## Open point
+
+**Which state of the draft answers D6.2.** The options, all commits of the same repository:
+
+| State | Commit | What differs |
+|---|---|---|
+| 29 April 2024, one day before the date of D6.1 | `be9853d` | Same 14 terms of its own; about 500 lines of `index.html` differ from the September state |
+| **20 September 2024, copied here** | `ecabf8c` | |
+| 30 October 2024, last change of `index.html` before the D6.2 PDF was produced | `7670f98` | Three class diagrams by access level replace the two by DCAT-AP version; one sentence and one example changed; the tables are the same |
+| 5 September 2025, last state before the site went offline | `084e2fb` | Adds SHACL shapes for open, protected and sensitive data (uploaded from 26 February 2025) and one more term; 11 months after D6.2 |
+
+To copy another state, change the commit and the file list of the source `healthdcat-ap-2024-09` in `benchmark.json`, run `tools/fetch_upstream.py` and then `tools/validate.py --write-checksums`.

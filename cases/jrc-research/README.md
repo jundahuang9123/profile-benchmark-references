@@ -1,26 +1,42 @@
-# JRC research / DCAT-AP-JRC sanity case
+# DCAT-AP-JRC (`jrc-research`)
 
-The reference is the JRC-authored November 2016 workshop paper
-[Using DCAT-AP for research data](https://www.w3.org/2016/11/sdsvoc/SDSVoc16_paper_27).
-`reference-requirements/core-requirements.json` preserves its **five explicitly enumerated
-core needs** as curator paraphrases: authors, lineage, usage guidance, scientific
-publications and input datasets. Adopted terms are evaluator-side traceability only.
+Requirements for research-data metadata from a 2016 workshop paper of the Joint Research Centre, and the first published specification of the profile that paper describes. RQ1 role: development case. Two points are open, both listed at the end.
 
-Raw input includes the rights-cleared **2015 JRC Data Policy**, W3C DCAT (2014), and a
-factual synopsis of DataCite **3.1 (August 2015 documentation)**. The JRC paper documents
-DataCite as input, but does not establish its exact minor version. Our particular 3.1
-selection and synopsis are labelled curator reconstruction. The full historical DataCite
-PDF is citation-only because redistribution rights were not established from that PDF.
+## Requirements
 
-The currently served DCAT-AP 1.1 PDF contains 2017 metadata, so it is provenance-only.
-The JRC paper itself contains both its answers and modelling decisions; it must never be
-a raw input. Its original full-text redistribution permission is not assumed solely from
-W3C hosting. Additional identifier, agent-role, API, quality and provenance issues in the
-paper are not silently added to the five-row sanity set.
+| File | Content |
+|---|---|
+| `requirements/reference-set.json` | 11 rows and 18 atoms, as in RQ1 version 3 |
+| `requirements/atoms.csv` | flat view of the atoms, generated |
 
-This is a **small, partial development/sanity benchmark**, not a complete reconstruction
-of scientific stakeholder elicitation. Do not assume policy context alone supports all
-five reference rows. No B consolidation condition is available.
+- 17 content atoms and 1 system atom. 9 are requirements; 9 are issues the paper leaves open.
+- Source: Perego, Friis-Christensen, Vaccari and Tsinaraki, *Using DCAT-AP for research data*, SDSVoc workshop, November 2016, <https://www.w3.org/2016/11/sdsvoc/SDSVoc16_paper_27>. Cited only: no redistribution licence was established, so there is no copy here.
+- The anchor quotes of this case were read from the live page and not checked against a stored copy (`anchor_check`).
+- The paper states the needs and also the terms chosen for them. Five rows carry those terms in `adopted_resolution`. They are answers and stay on the evaluator's side.
+- The paper does not use the name DCAT-AP-JRC. It speaks of the JRC metadata schema and its core profile, an extension of DCAT-AP, and mentions one DCAT-AP version, 1.1, as the current one (as read on 13 November 2026).
 
-See [manifest](provenance/manifest.json), [gaps](provenance/GAPS.md),
-[methodology](../BENCHMARK-METHODOLOGY.md), and [runtime allowlists](../runtime-inputs.json).
+## Published profile
+
+DCAT-AP-JRC, Version 1, dated 3 July 2019. Source: `ec-jrc/dcat-ap-jrc`, folder `docs/1.0`, commit `c2101b0` (31 May 2024). Licence: CC BY 4.0.
+
+| File in `profile/` | Content |
+|---|---|
+| `index.html`, `config.js` | the specification as ReSpec source; `config.js` holds the date, the editors and the references |
+| `img/` | class diagram (PNG, SVG, XML) |
+| `registers/` | four code lists published with the profile, as RDF/XML, with two HTML pages |
+| `examples/` | 18 example files that the page includes; the RDF/XML ones are snippets, not complete documents |
+
+- No RDF vocabulary and no SHACL shapes were published with Version 1. Classes and properties are in HTML tables with the columns label, obligation, maximum cardinality, RDF property, range, code list, scope and specification.
+- The specification column names the specification in which a term is first defined: DCAT-AP, GeoDCAT-AP, StatDCAT-AP or DCAT-AP-JRC.
+- A browser needs network access to render `index.html`, because the page loads ReSpec from w3.org. The tables can be read from the source without it.
+
+## Base
+
+RQ1 records DCAT-AP 1.1 for this case ([`bases/dcat-ap-1.1`](../../bases/README.md)).
+
+## Open points
+
+1. **Which profile answers the 2016 requirements.** Version 1 was published two years and eight months after the paper. Its requirements section says that part of them was described in the paper. No artefact of the profile from 2016 was found; the repository starts in May 2019. The first published state of Version 1 is commit `a78efb7` (4 July 2019); the copy here has the editorial and ReSpec fixes made since.
+2. **Which base.** Version 1 lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 (August 2016) and StatDCAT-AP 1.0.1 (May 2019) as the specifications it is based on. Measured against DCAT-AP 1.1, the difference would also contain what DCAT-AP gained between 1.1 and 1.2.1. DCAT-AP 1.2.1 is stored in [`bases/dcat-ap-1.2.1`](../../bases/README.md); GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1 are not copied.
+
+A newer DCAT-AP-JRC, aligned with DCAT-AP 3, is in the same repository under `docs/`. It is not used.
