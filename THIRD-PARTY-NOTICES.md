@@ -12,8 +12,9 @@ This repository has no blanket licence, and nothing here overrides the licence o
 ## Bases
 
 - **DCAT-AP 1.1**: © 2015 European Union. ISA Open Metadata Licence v1.1 (rights page of the PDF; `dct:license` of the shapes files).
-- **DCAT-AP 1.2.1** and **2.0.1**: European Union. The PDFs state no licence. The README of the `SEMICeu/DCAT-AP` repository states CC BY 4.0 for all its material unless explicitly mentioned otherwise.
+- **DCAT-AP 2.0.1**: European Union. The PDF states no licence. The README of the `SEMICeu/DCAT-AP` repository states CC BY 4.0 for all its material unless explicitly mentioned otherwise.
 - **DCAT-AP 3.0.0**: European Union. CC BY 4.0, stated in the specification.
+- **RQ1 base registries** (`bases/rq1-registries/`): built by the RQ1 workbench from the DCAT-AP releases above and from the archived final PDF of DCAT-AP 1.1 (© 2015 European Union, ISA Open Metadata Licence v1.1), which is stored with them. Labels and usage notes in the registries are taken from those specifications.
 
 ## HealthData@EU pilot deliverables
 

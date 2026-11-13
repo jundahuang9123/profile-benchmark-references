@@ -21,14 +21,14 @@ This repository is a fork of the RQ1 reference library (`requirements-benchmark-
 
 | Case | Requirements | Requirement source | Published profile | Profile in machine-readable form | Base |
 |---|---|---|---|---|---|
-| [jrc-research](cases/jrc-research/README.md) | 11 rows, 18 atoms | Workshop paper of Nov 2016 (cited, not copied) | DCAT-AP-JRC Version 1, 3 Jul 2019 (**verify**) | No: tables in HTML | DCAT-AP 1.1 (**verify**) |
+| [jrc-research](cases/jrc-research/README.md) | 11 rows, 18 atoms | Workshop paper of Nov 2016 (cited, not copied) | DCAT-AP-JRC Version 1, 3 Jul 2019 | No: tables in HTML | DCAT-AP 1.1 |
 | [statdcat](cases/statdcat/README.md) | 22 rows, 27 atoms | StatDCAT-AP 1.0.0 report | StatDCAT-AP 1.0.0, 15 Dec 2016 | RDF with usage notes, no SHACL | DCAT-AP 1.1 |
 | [geodcat](cases/geodcat/README.md) | 46 rows, 56 atoms | GeoDCAT-AP 1.0 specification | GeoDCAT-AP 1.0, 23 Dec 2015 | No: tables in PDF and DOCX | DCAT-AP 1.1 |
-| [healthdcat](cases/healthdcat/README.md) | 69 rows, 121 atoms | HealthData@EU Pilot D6.2, 30 Sep 2024 | HealthDCAT-AP pilot draft as of 20 Sep 2024 (**verify**) | No: tables in HTML | DCAT-AP 3.0.0 |
+| [healthdcat](cases/healthdcat/README.md) | 69 rows, 121 atoms | HealthData@EU Pilot D6.2, 30 Sep 2024 | HealthDCAT-AP pilot draft as of 20 Sep 2024 | No: tables in HTML | DCAT-AP 3.0.0 |
 | [mobilitydcat](cases/mobilitydcat/README.md) | 40 rows, 98 atoms | NAPCORE requirement analysis v1.0, 2022 (cited, not copied) | mobilityDCAT-AP 1.0.0, 16 Oct 2023 | RDF and SHACL | DCAT-AP 2.0.1 |
 | **All** | 188 rows, 320 atoms | | | | |
 
-The profile releases are the ones that go with the requirement sources RQ1 froze, not the newest ones. **verify** marks a choice that was made while this repository was assembled and that the curator has not confirmed; the three of them are listed under [Open points](#open-points). The evidence for every release and base is in [docs/versions.md](docs/versions.md).
+The profile releases are the ones that go with the requirement sources RQ1 froze, not the newest ones, and the bases are the ones RQ1's runs pin. Every release and base was checked against what RQ1 records; the result is under [Checked against RQ1](#checked-against-rq1) and the evidence in [docs/versions.md](docs/versions.md).
 
 In RQ1, jrc-research and statdcat were development cases and the other three were test cases (curator's statement of 12 November 2026).
 
@@ -47,6 +47,7 @@ cases/counts.json         counts per case
 cases/term-check.csv      atom statements that carry a term or name their target profile
 cases/rq1-row-coding.csv  earlier coding of 75 rows against profile terms; not gold
 bases/<id>/               the DCAT-AP releases the profiles extend; upstream files, unchanged
+bases/rq1-registries/     the base registries RQ1's runs pin, and the 2015 PDF of DCAT-AP 1.1 behind one of them
 docs/                     data dictionary, version evidence, fork notes
 tools/                    fetch_upstream.py, build_views.py, validate.py
 ```
@@ -65,15 +66,25 @@ Field by field: [docs/data-dictionary.md](docs/data-dictionary.md).
 ## What is here and what is not
 
 - The requirements are complete as RQ1 version 3 has them. Their status is RQ1's: merged sets with a provisional adjudication of the reviewed items, not adjudicated independently as a whole.
-- All five profiles and the bases are stored with their upstream commit and digest. For statdcat, geodcat and mobilitydcat the release and the upstream commit are the ones RQ1 had pinned.
+- All five profiles and the bases are stored with their upstream commit and digest. For statdcat, geodcat and mobilitydcat the release and the upstream commit are the ones RQ1 had pinned. The three base registries have the digests RQ1's runs record.
 - Only mobilityDCAT-AP 1.0.0 has SHACL shapes. StatDCAT-AP 1.0.0 has an RDF description with obligations and cardinalities in usage notes. For the other three profiles the constraints exist only as tables in the specification, so their difference to the base has to be built from those tables.
 - Not here: gold differences (deltas), an alignment of atoms to profile elements, counterfactual atoms, and Construct-DCAT, the unseen case, whose requirements are not in the RQ1 library.
 
-## Open points
+## Checked against RQ1
 
-1. **jrc-research, profile.** The requirements come from a paper of November 2016. The earliest public specification of DCAT-AP-JRC is Version 1 of July 2019. Nothing from 2016 was found.
-2. **jrc-research, base.** RQ1 records DCAT-AP 1.1. Version 1 says it is based on DCAT-AP 1.2.1, GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1. DCAT-AP 1.2.1 is stored in `bases/` for that reason.
-3. **healthdcat, profile.** The pilot published an unversioned draft. The copy here is its last state before the date of D6.2. The state at the date of D6.1 (29 April 2024) has the same terms of its own, differs in about 500 lines and was not copied.
+RQ1 is the standard: its reference sets, its row coding and the bases its runs pin. Checked on 13 November 2026:
+
+| Point | Result |
+|---|---|
+| Bases | RQ1's runs pin `dcat-ap-1.1.0` for jrc-research, statdcat and geodcat, `dcat-ap-2.0.1` for mobilitydcat and `dcat-ap-3.0.0` for healthdcat. The bases here are those releases, and the registries in `bases/rq1-registries/` have the pinned digests. |
+| jrc-research, profile | All 5 terms RQ1 coded for the published rows, and all 4 named in atom notes, are in DCAT-AP-JRC Version 1. |
+| healthdcat, profile | 31 of the 34 terms RQ1 coded are in the draft of 20 September 2024. The other 3 are in D6.2 but in no state of the draft, so another date would not change the result. |
+| mobilitydcat, profile | All 58 coded terms are in mobilityDCAT-AP 1.0.0. |
+
+Two limits remain and cannot be closed from these sources:
+
+1. **jrc-research.** The requirements are from 2016 and Version 1 is from 2019; nothing from 2016 was found. Version 1 names DCAT-AP 1.2.1 as its base, while RQ1 uses 1.1. Compared with 1.1, the profile's difference also contains what DCAT-AP itself gained between 1.1 and 1.2.1.
+2. **healthdcat.** The draft has no version numbers. The copy is its last state before the date of D6.2; its tables are the same on 30 October 2024.
 
 ## Check and rebuild
 

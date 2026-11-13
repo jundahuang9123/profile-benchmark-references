@@ -9,12 +9,6 @@ d50c986c35ad3ee6e1d85371c8213f48b17251a7276b696c9ade997ebd9dbbe8  bases/dcat-ap-
 090ee7eb5d07aed813798c506770dbba7212e12892edb0f626b4237c2b3e4966  bases/dcat-ap-1.1/shacl-201706/dcat-ap-mandatory-classes.shapes.ttl
 dc3b82225dcfb4c58b8968a3f69d507204d64225e089bd77bd2c7af1a429e051  bases/dcat-ap-1.1/shacl-201706/dcat-ap-mdr-vocabularies.shapes.ttl
 a7e4360607b3af8a0722e7ca656a385abf1cf16e63a821e24d73125e29a6a45e  bases/dcat-ap-1.1/shacl-201706/dcat-ap.shapes.ttl
-308ea5772a85834d9b92535c0ad70aac51356cbb2cd9b60c8ada22c92436328f  bases/dcat-ap-1.2.1/DCAT_AP_1.2.1.pdf
-10cfef00c0dbfa113bbaee28f59c81e874d043b085e125a037f56e9b35e397a1  bases/dcat-ap-1.2.1/dcat-ap_1.2.1.jsonld
-8ebf5494863ec60c6bf3fcebf559e5f50b56648ec75fb0a82230702a9dd52e0e  bases/dcat-ap-1.2.1/dcat-ap_1.2.1.rdf
-71ede723ad2679fa90c3eeaeac4cda62a6369ea59b753e901c09fc0a1bee70a7  bases/dcat-ap-1.2.1/dcat-ap_1.2.1_shacl_mandatory-classes.shapes.ttl
-1bb90412e5f4416951ad28ee71f831c273abd7b945ff1cebf49064dfd08b189d  bases/dcat-ap-1.2.1/dcat-ap_1.2.1_shacl_mdr-vocabularies.shape.ttl
-5ae9e9370e548e040a101a35fb1a5dcd3c7419febe57d00deb4aa1056eff37fc  bases/dcat-ap-1.2.1/dcat-ap_1.2.1_shacl_shapes.ttl
 972b029ebd3cbedb366cee9c546f0b116dee6dafebd730773329448927e09c5d  bases/dcat-ap-2.0.1/DCAT_AP_2.0.1.pdf
 3793caf45196da0e4cc2da7de6c1d258d2446de7a3a2940ec2c23c300220b0f6  bases/dcat-ap-2.0.1/README.md
 44ffd32f5648dd6351e2ae2d02d2931961a1b9d793b40e7ad3cf5b494559b6c7  bases/dcat-ap-2.0.1/dcat-ap_2.0.1.jsonld
@@ -35,6 +29,10 @@ c2cac2b6f65fc546b30381984734135de0b20a5e10b3a945425926340348fb02  bases/dcat-ap-
 faf607042f641ed3c022fc8cb5bb36d450991eca9202107d3aa49dc78a9bbff2  bases/dcat-ap-3.0.0/index.html
 e7cbc9c0546954ddb9ebd32f6904b0b8c2c00987c02e83e009f547a47560cebe  bases/dcat-ap-3.0.0/shacl/dcat-ap-SHACL.jsonld
 92f76609d78d257123e75bc6b7155df5cc0a63f14c29fbc12b0ac95c56af2059  bases/dcat-ap-3.0.0/shacl/dcat-ap-SHACL.ttl
+7d1ab3eeef3fd832e3b289b664e9dedf61197c348a933d3ea0a9b7d685b9124d  bases/rq1-registries/dcat-ap-1.1-source/dcat-ap_1.1.pdf
+47ec2d9ba984d2a10d3bdab87e5e5e659420a4a5d9d64bea233019617d641c9a  bases/rq1-registries/dcat-ap-1.1.0.json
+8714b33e415b4576e2bf9046ae66806555f376dffbeeff5e681eb9e0fda70180  bases/rq1-registries/dcat-ap-2.0.1.json
+abac1d09177b760059d4e3deb63819c081081df758f23f0567815f4b9d35971f  bases/rq1-registries/dcat-ap-3.0.0.json
 43906c5e34f470fc4db374972bfa5aaa75436832b88ee44fc6823e831257d5d6  cases/atoms.csv
 708504a1ccb775a0635191af2a75be02cfad77d310dbc095a0e554fdafbd39bc  cases/counts.json
 ea9c5edf2842932727178354d12bbfeaf33f70d8c6921db9da04f718d1e31419  cases/geodcat/profile/README.md

@@ -49,7 +49,8 @@ prints nothing, for each of the five cases.
 
 ## Added
 
-- The published profiles and the DCAT-AP bases, fetched from their upstream repositories at pinned commits (`benchmark.json`, `tools/fetch_upstream.py`): 74 new files beside the 4 that RQ1 already held, plus the 6 unpacked shapes files of DCAT-AP 1.1.
+- The published profiles and the DCAT-AP bases, fetched from their upstream repositories at pinned commits (`benchmark.json`, `tools/fetch_upstream.py`): 68 new files beside the 4 that RQ1 already held, plus the 6 unpacked shapes files of DCAT-AP 1.1.
+- The three base registries RQ1's runs pin, and the 2015 PDF of DCAT-AP 1.1 behind one of them, from the RQ1 workbench (`bases/rq1-registries/`).
 - Generated views of the atoms: `atoms.csv` per case and for all cases, `counts.json`, `term-check.csv` (`tools/build_views.py`).
 - `SHA256SUMS` and `tools/validate.py`.
 - This documentation.

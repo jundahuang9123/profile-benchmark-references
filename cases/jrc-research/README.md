@@ -1,6 +1,6 @@
 # DCAT-AP-JRC (`jrc-research`)
 
-Requirements for research-data metadata from a 2016 workshop paper of the Joint Research Centre, and the first published specification of the profile that paper describes. RQ1 role: development case. Two points are open, both listed at the end.
+Requirements for research-data metadata from a 2016 workshop paper of the Joint Research Centre, and the first published specification of the profile that paper describes. RQ1 role: development case. Profile and base were checked against RQ1; two limits are listed at the end.
 
 ## Requirements
 
@@ -32,11 +32,13 @@ DCAT-AP-JRC, Version 1, dated 3 July 2019. Source: `ec-jrc/dcat-ap-jrc`, folder 
 
 ## Base
 
-RQ1 records DCAT-AP 1.1 for this case ([`bases/dcat-ap-1.1`](../../bases/README.md)).
+DCAT-AP 1.1 ([`bases/dcat-ap-1.1`](../../bases/README.md)). RQ1 records it in the reference set and pins the registry `dcat-ap-1.1.0` in every run of this case.
 
-## Open points
+## Checked against RQ1, and two limits
 
-1. **Which profile answers the 2016 requirements.** Version 1 was published two years and eight months after the paper. Its requirements section says that part of them was described in the paper. No artefact of the profile from 2016 was found; the repository starts in May 2019. The first published state of Version 1 is commit `a78efb7` (4 July 2019); the copy here has the editorial and ReSpec fixes made since.
-2. **Which base.** Version 1 lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 (August 2016) and StatDCAT-AP 1.0.1 (May 2019) as the specifications it is based on. Measured against DCAT-AP 1.1, the difference would also contain what DCAT-AP gained between 1.1 and 1.2.1. DCAT-AP 1.2.1 is stored in [`bases/dcat-ap-1.2.1`](../../bases/README.md); GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1 are not copied.
+All five terms RQ1 coded for the published rows (`dct:creator`, `dct:provenance`, `vann:usageNote`, `dct:isReferencedBy`, `dct:source`) and all four terms named in atom notes are in Version 1.
+
+1. **The profile is later than the requirements.** Version 1 was published two years and eight months after the paper. Its requirements section says that part of them was described in the paper. No artefact of the profile from 2016 was found; the repository starts in May 2019. The first published state of Version 1 is commit `a78efb7` (4 July 2019); the copy here has the editorial and ReSpec fixes made since.
+2. **The profile names a later base.** Version 1 lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 (August 2016) and StatDCAT-AP 1.0.1 (May 2019) as the specifications it is based on. Measured against DCAT-AP 1.1, the difference also contains what DCAT-AP gained between 1.1 and 1.2.1. The specification column of the tables shows which terms DCAT-AP-JRC itself introduced.
 
 A newer DCAT-AP-JRC, aligned with DCAT-AP 3, is in the same repository under `docs/`. It is not used.

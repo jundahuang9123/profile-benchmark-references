@@ -1,6 +1,6 @@
 # HealthDCAT-AP (`healthdcat`)
 
-Requirements for describing health datasets for secondary use, taken from deliverable D6.2 of the HealthData@EU pilot, and the pilot's draft of the profile as it stood when D6.2 was written. RQ1 role: test case. The choice of the draft's state is open; see the end.
+Requirements for describing health datasets for secondary use, taken from deliverable D6.2 of the HealthData@EU pilot, and the pilot's draft of the profile as it stood when D6.2 was written. RQ1 role: test case. The draft's state was checked against RQ1; see the end.
 
 ## Requirements
 
@@ -33,11 +33,11 @@ The pilot published the profile as a draft at healthdcat-ap.github.io, without v
 
 ## Base
 
-DCAT-AP 3.0.0 ([`bases/dcat-ap-3.0.0`](../../bases/README.md)), as RQ1 records; D6.2 refers to DCAT-AP 3.0 throughout. The draft says its requirements are compatible with DCAT-AP 2 and with DCAT-AP 3.0.0.
+DCAT-AP 3.0.0 ([`bases/dcat-ap-3.0.0`](../../bases/README.md)). RQ1 records it in the reference set and pins the registry `dcat-ap-3.0.0` in every run of this case; D6.2 refers to DCAT-AP 3.0 throughout. The draft says its requirements are compatible with DCAT-AP 2 and with DCAT-AP 3.0.0.
 
-## Open point
+## The state of the draft, checked against RQ1
 
-**Which state of the draft answers D6.2.** The options, all commits of the same repository:
+31 of the 34 terms RQ1 coded for the published rows are in the copy. The other three (`healthdcatap:reviewDate`, `csvw:Schema`, and from atom notes `oa:bodyText` and `oa:motivation`) are in D6.2 but in no state of the draft, so no other date would find them. The states that were compared, all commits of the same repository:
 
 | State | Commit | What differs |
 |---|---|---|

@@ -5,18 +5,32 @@ Rule: each case uses the profile release that goes with its requirement source, 
 Evidence levels, as in `benchmark.json`:
 
 - **confirmed**: RQ1 records the release and the specification states it.
-- **consistent**: RQ1 records the release. The specification does not state it, but its content agrees with it.
-- **verify**: a choice made while this repository was assembled, on 13 November 2026. The curator has not confirmed it.
+- **consistent**: RQ1 records the release or its source, and what RQ1 recorded about the requirements agrees with the stored files. The specification does not state the release.
+- **rq1**: taken from RQ1, which is the standard here by the curator's instruction of 13 November 2026. The stored specification names a different release.
 
 ## Summary
 
 | Case | Requirement source | Profile release | | Base | |
 |---|---|---|---|---|---|
-| jrc-research | workshop paper, Nov 2016 | DCAT-AP-JRC Version 1, 3 Jul 2019 | verify | DCAT-AP 1.1 | verify |
+| jrc-research | workshop paper, Nov 2016 | DCAT-AP-JRC Version 1, 3 Jul 2019 | consistent | DCAT-AP 1.1 | rq1 |
 | statdcat | StatDCAT-AP 1.0.0 report, 15 Dec 2016 | StatDCAT-AP 1.0.0, 15 Dec 2016 | confirmed | DCAT-AP 1.1 | confirmed |
 | geodcat | GeoDCAT-AP 1.0 specification, 23 Dec 2015 | GeoDCAT-AP 1.0, 23 Dec 2015 | confirmed | DCAT-AP 1.1 | consistent |
-| healthdcat | HealthData@EU D6.2, 30 Sep 2024 | pilot draft as of 20 Sep 2024 | verify | DCAT-AP 3.0.0 | consistent |
+| healthdcat | HealthData@EU D6.2, 30 Sep 2024 | pilot draft as of 20 Sep 2024 | consistent | DCAT-AP 3.0.0 | confirmed |
 | mobilitydcat | NAPCORE requirement analysis v1.0, Jun 2022 | mobilityDCAT-AP 1.0.0, 16 Oct 2023 | confirmed | DCAT-AP 2.0.1 | confirmed |
+
+## What RQ1 pins
+
+Every run of the RQ1 workbench records the id and SHA-256 of its base registry (`base_profile_id`, `base_profile_sha256`). The run store has `dcat-ap-1.1.0` for all jrc-research, statdcat and geodcat runs, `dcat-ap-2.0.1` for mobilitydcat and `dcat-ap-3.0.0` for healthdcat. The three registries are copied to `bases/rq1-registries/` and have the recorded digests.
+
+The terms RQ1 recorded for the requirements were looked up in the stored profiles (`cases/rq1-row-coding.csv`, and the terms named in atom notes and anchor quotes):
+
+| Case | Coded terms found | Terms in notes and anchors found |
+|---|---|---|
+| jrc-research | 5 of 5 | 4 of 4 |
+| healthdcat | 31 of 34 | 20 of 23 |
+| mobilitydcat | 58 of 58 | 28 of 28 |
+
+The healthdcat terms not found are `healthdcatap:reviewDate` (coded as proposed only), `csvw:Schema`, `oa:bodyText` and `oa:motivation`. They are in D6.2 and in no state of the draft from April 2024 to September 2025. The statdcat rows were coded from the report that is the profile; geodcat rows carry no terms.
 
 ## Evidence
 
@@ -47,14 +61,13 @@ Evidence levels, as in `benchmark.json`:
 
 - Profile. The 2016 paper is not redistributable. As read on 13 November 2026, it speaks of the JRC metadata schema and its core profile, an extension of DCAT-AP, and does not use the name DCAT-AP-JRC. The repository `ec-jrc/dcat-ap-jrc` starts on 2 May 2019. Its Version 1 is dated 3 July 2019 in `config.js` and has the paper's four authors. Its requirements section says part of the requirements was described in the paper. Whether the profile changed between 2016 and 2019 cannot be told from these files.
 - Base. RQ1 records DCAT-AP 1.1, and its row coding compares against 1.1. The paper mentions one DCAT-AP version, 1.1, as the current one. Version 1 names DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 (August 2016) and StatDCAT-AP 1.0.1 (May 2019) as the specifications it is based on.
-- The two points depend on each other. With Version 1 as the profile, DCAT-AP 1.2.1 is the base that matches it. With DCAT-AP 1.1 as the base, the reference would be the terms the paper itself adopts, which the reference set has for five rows (`adopted_resolution`).
+- Decision, with RQ1 as the standard: Version 1 is the profile and DCAT-AP 1.1 the base. The difference between the two then also contains what DCAT-AP gained between 1.1 and 1.2.1; a comparison has to say so. The "Spec." column of Version 1 marks which terms the profile itself introduced.
 
 ## Bases
 
 | Base | Dated by | Date |
 |---|---|---|
-| DCAT-AP 1.1 | title page and footers of the PDF; its document metadata says 2017-02-24 | 2015-10-23 |
-| DCAT-AP 1.2.1 | document metadata of the PDF | 2019-05-28 |
+| DCAT-AP 1.1 | title page and footers of the PDF. The SEMIC copy has document metadata of 2017-02-24; the archived final PDF RQ1 uses (`bases/rq1-registries/dcat-ap-1.1-source/`) says 2015-10-23, status Final | 2015-10-23 |
 | DCAT-AP 2.0.1 | document metadata of the PDF | 2020-06-08 |
 | DCAT-AP 3.0.0 | settings of the HTML page; committed upstream on 17 June 2024 | 2024-06-14 |
 
@@ -67,7 +80,7 @@ Evidence levels, as in `benchmark.json`:
 | GeoDCAT-AP | 1.0.1 (2 Aug 2016), 2.0.0 (23 Dec 2020), 3.0.0 (4 Oct 2024), 3.1.0 (12 Feb 2026) | upstream `releases/README.md` |
 | HealthDCAT-AP | later states of the pilot draft, up to 5 Sep 2025; numbered releases on the European Commission's platform, which the upstream README points to (Release 5) | upstream repository; not examined further |
 | mobilityDCAT-AP | 1.0.1 (4 Apr 2024), 1.1.0 (17 Jan 2025); the repository also has a tag `v3.0.0` | document history of release 1.1.0; upstream tags |
-| DCAT-AP | 3.0.1 and the releases between those stored here | upstream `releases/` |
+| DCAT-AP | 1.2, 1.2.1, 2.0.0, 2.1.0, 2.1.1, 3.0.1 | upstream `releases/` |
 
 ## Adding or changing a release
 

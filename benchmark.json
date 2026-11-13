@@ -9,8 +9,8 @@
   },
   "status_values": {
     "confirmed": "RQ1 records this release and the specification states it.",
-    "consistent": "RQ1 records this release. The specification does not state it, but its content agrees with it.",
-    "verify": "A choice made while this repository was assembled. Needs the curator's confirmation before gold is frozen."
+    "consistent": "RQ1 records the release or its source, and what RQ1 recorded about the requirements agrees with the stored files. The specification does not state the release.",
+    "rq1": "Taken from RQ1, which is the standard here by the curator's instruction of 13 November 2026. The stored specification names a different release."
   },
   "cases": [
     {
@@ -43,14 +43,13 @@
           "rdf_vocabulary": false,
           "shacl": false
         },
-        "status": "verify",
-        "evidence": "First public specification of the profile the 2016 paper describes. Its requirements section says part of them was described in the 2016 paper. Published two years and eight months after the paper; no artefact from 2016 was found. The paper itself does not use the name DCAT-AP-JRC."
+        "status": "consistent",
+        "evidence": "First public specification of the profile the 2016 paper describes; its requirements section says part of them was described in that paper. No artefact from 2016 was found. Checked against RQ1 on 13 Nov 2026: all five terms RQ1 coded for the published rows and all four terms named in atom notes and anchors are in Version 1."
       },
       "base": {
         "id": "dcat-ap-1.1",
-        "status": "verify",
-        "evidence": "RQ1 records DCAT-AP 1.1 for the 2016 paper, and the paper mentions 1.1 as the current DCAT-AP version. Version 1 of the specification lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1 as the specifications it is based on.",
-        "alternative": "dcat-ap-1.2.1"
+        "status": "rq1",
+        "evidence": "RQ1 records DCAT-AP 1.1 in the reference set and pins the registry dcat-ap-1.1.0 in every jrc-research run; the 2016 paper mentions 1.1 as the current DCAT-AP version. Version 1 of the specification lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1 as the specifications it is based on, so its difference to 1.1 also holds what DCAT-AP gained up to 1.2.1."
       }
     },
     {
@@ -162,14 +161,14 @@
           "rdf_vocabulary": false,
           "shacl": false
         },
-        "status": "verify",
-        "evidence": "D6.1 and D6.2 both give healthdcat-ap.github.io as the place where the profile is published. That site carried no version numbers, so the snapshot is the last commit of its repository on or before the D6.2 date (20 Sep 2024; the next one is 11 Oct 2024). The profile's own terms are the same in every commit from 29 Apr 2024 to the end of 2024.",
+        "status": "consistent",
+        "evidence": "D6.1 and D6.2 both give healthdcat-ap.github.io as the place where the profile is published. That site carried no version numbers, so the snapshot is the last commit of its repository on or before the D6.2 date (20 Sep 2024; the next one is 11 Oct 2024). The profile's own terms are the same in every commit from 29 Apr 2024 to the end of 2024. Checked against RQ1 on 13 Nov 2026: 31 of the 34 terms RQ1 coded for the published rows are in the snapshot; the other three (healthdcatap:reviewDate, proposed only; csvw:Schema; and, from atom notes, oa:bodyText and oa:motivation) are in D6.2 but in no state of the draft up to September 2025, so the choice of date does not affect them.",
         "alternative": "Commit be9853dde202c6a573abfed4818c1963c1d2c426 (29 Apr 2024), the state one day before the D6.1 date. Not copied here."
       },
       "base": {
         "id": "dcat-ap-3.0.0",
-        "status": "consistent",
-        "evidence": "RQ1 records DCAT-AP 3.0.0, and D6.2 refers to DCAT-AP 3.0 throughout. The draft itself says its requirements are compatible with DCAT-AP 2 and DCAT-AP 3.0.0 and shows one class diagram for each."
+        "status": "confirmed",
+        "evidence": "RQ1 records DCAT-AP 3.0.0 in the reference set and pins the registry dcat-ap-3.0.0 in every healthdcat run; D6.2 refers to DCAT-AP 3.0 throughout. The draft says its requirements are compatible with DCAT-AP 2 and DCAT-AP 3.0.0 and shows one class diagram for each."
       }
     },
     {
@@ -224,15 +223,6 @@
         "statdcat",
         "geodcat"
       ]
-    },
-    {
-      "id": "dcat-ap-1.2.1",
-      "name": "DCAT-AP",
-      "version": "1.2.1",
-      "directory": "bases/dcat-ap-1.2.1",
-      "source": "dcat-ap-1.2.1",
-      "used_by": [],
-      "note": "Not a base of any case as recorded in RQ1. Kept because Version 1 of DCAT-AP-JRC names it as the release it is based on; see the open point of the jrc-research case."
     },
     {
       "id": "dcat-ap-2.0.1",
@@ -393,35 +383,11 @@
         "dcat-ap_1.1.bmp (class diagram, 4.1 MB)",
         "dcat-ap_1.1.eap (Enterprise Architect model)"
       ],
-      "note": "RQ1 notes that the PDF served for 1.1 carries a 2017 metadata date under its 2015 footers; the original 2015 bytes were not recovered. The two SHACL archives are also unpacked next to them, bytes unchanged; the 2016 archive holds a .gitignore that is left out.",
+      "note": "The PDF in this folder is the copy the SEMIC repository serves; its document metadata is dated 2017-02-24. RQ1 builds its base from the archived final PDF of 2015 instead (bases/rq1-registries). The shapes in the two archives declare owl:versionInfo 1.2 (dcat-ap.shapes.ttl), which is why RQ1 does not use them. The archives are also unpacked next to them, bytes unchanged; the 2016 archive holds a .gitignore that is left out.",
       "extracted": {
         "shacl-201608.zip": "bases/dcat-ap-1.1/shacl-201608",
         "shacl-201706.zip": "bases/dcat-ap-1.1/shacl-201706"
       }
-    },
-    {
-      "id": "dcat-ap-1.2.1",
-      "repository": "SEMICeu/DCAT-AP",
-      "commit": "4470b8ea907b7eb9ec55ab22befd1ecd2210ff32",
-      "commit_date": "2026-06-16",
-      "upstream_directory": "releases/1.2.1",
-      "local_directory": "bases/dcat-ap-1.2.1",
-      "licence": "The PDF states no licence; the repository README states CC BY 4.0 unless mentioned otherwise",
-      "files": [
-        "DCAT_AP_1.2.1.pdf",
-        "dcat-ap_1.2.1.rdf",
-        "dcat-ap_1.2.1.jsonld",
-        "dcat-ap_1.2.1_shacl_shapes.ttl",
-        "dcat-ap_1.2.1_shacl_mandatory-classes.shapes.ttl",
-        "dcat-ap_1.2.1_shacl_mdr-vocabularies.shape.ttl"
-      ],
-      "not_included": [
-        "DCAT_AP_1.2.1.docx",
-        "DCAT_AP_1.2.1.odt",
-        "DCAT-AP_1.2.1.PNG and .svg (class diagram)",
-        "dcat-ap_1.2.1.eap",
-        "Draft/ (pre-release copies)"
-      ]
     },
     {
       "id": "dcat-ap-2.0.1",
@@ -476,5 +442,44 @@
         "html/example.js, html/callout.png"
       ]
     }
-  ]
+  ],
+  "rq1_base_registries": {
+    "description": "The base registries the RQ1 workbench compares against, and the source of its DCAT-AP 1.1 registry. Every RQ1 run records the id and SHA-256 of its registry; the files here have those digests.",
+    "origin": {
+      "repository": "profile-requirements-extraction (RQ1 workbench)",
+      "commit": "8419bc8d60f3b9b6667f297f69f66f01eed6ccbb",
+      "commit_date": "2026-11-07",
+      "directory": "requirement-reuse-service/config/base_profiles"
+    },
+    "files": [
+      {
+        "path": "bases/rq1-registries/dcat-ap-1.1.0.json",
+        "sha256": "47ec2d9ba984d2a10d3bdab87e5e5e659420a4a5d9d64bea233019617d641c9a",
+        "pinned_by_runs_of": [
+          "jrc-research",
+          "statdcat",
+          "geodcat"
+        ]
+      },
+      {
+        "path": "bases/rq1-registries/dcat-ap-2.0.1.json",
+        "sha256": "8714b33e415b4576e2bf9046ae66806555f376dffbeeff5e681eb9e0fda70180",
+        "pinned_by_runs_of": [
+          "mobilitydcat"
+        ]
+      },
+      {
+        "path": "bases/rq1-registries/dcat-ap-3.0.0.json",
+        "sha256": "abac1d09177b760059d4e3deb63819c081081df758f23f0567815f4b9d35971f",
+        "pinned_by_runs_of": [
+          "healthdcat"
+        ]
+      },
+      {
+        "path": "bases/rq1-registries/dcat-ap-1.1-source/dcat-ap_1.1.pdf",
+        "sha256": "7d1ab3eeef3fd832e3b289b664e9dedf61197c348a933d3ea0a9b7d685b9124d",
+        "note": "Archived final DCAT-AP 1.1 of 2015-10-23 (status Final), retrieved by RQ1 from https://datos.gob.es/sites/default/files/doc/file/dcat-ap_version_1.1.pdf. ISA Open Metadata Licence v1.1."
+      }
+    ]
+  }
 }
