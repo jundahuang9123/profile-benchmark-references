@@ -1,0 +1,480 @@
+{
+  "schema_version": "profile-benchmark-1",
+  "description": "Index of the benchmark: for each case, the reference requirements (inputs), the published profile they led to (held-out reference) and the DCAT-AP release that profile extends (base). Hand-maintained. File integrity is in SHA256SUMS; counts are in cases/counts.json.",
+  "acquired_on": "2026-11-13",
+  "forked_from": {
+    "repository": "requirements-benchmark-references (RQ1 reference library)",
+    "commit": "38ea67150aa159686ed30b4da7cef03df09e4fd8",
+    "commit_date": "2026-11-12"
+  },
+  "status_values": {
+    "confirmed": "RQ1 records this release and the specification states it.",
+    "consistent": "RQ1 records this release. The specification does not state it, but its content agrees with it.",
+    "verify": "A choice made while this repository was assembled. Needs the curator's confirmation before gold is frozen."
+  },
+  "cases": [
+    {
+      "id": "jrc-research",
+      "name": "DCAT-AP-JRC",
+      "rq1": {
+        "role": "development",
+        "reference_document": "Perego et al., Using DCAT-AP for research data (SDSVoc 2016, paper 27)",
+        "base": "DCAT-AP 1.1"
+      },
+      "requirements": {
+        "reference_set": "cases/jrc-research/requirements/reference-set.json",
+        "sources": [
+          {
+            "title": "Using DCAT-AP for research data (Perego, Friis-Christensen, Vaccari, Tsinaraki)",
+            "date": "2016-11",
+            "url": "https://www.w3.org/2016/11/sdsvoc/SDSVoc16_paper_27",
+            "availability": "citation_only",
+            "note": "Redistribution rights not established; no copy in this repository."
+          }
+        ]
+      },
+      "profile": {
+        "version": "Version 1",
+        "date": "2019-07-03",
+        "directory": "cases/jrc-research/profile",
+        "source": "dcat-ap-jrc-1",
+        "formats": {
+          "specification": "html",
+          "rdf_vocabulary": false,
+          "shacl": false
+        },
+        "status": "verify",
+        "evidence": "First public specification of the profile the 2016 paper describes. Its requirements section says part of them was described in the 2016 paper. Published two years and eight months after the paper; no artefact from 2016 was found. The paper itself does not use the name DCAT-AP-JRC."
+      },
+      "base": {
+        "id": "dcat-ap-1.1",
+        "status": "verify",
+        "evidence": "RQ1 records DCAT-AP 1.1 for the 2016 paper, and the paper mentions 1.1 as the current DCAT-AP version. Version 1 of the specification lists DCAT-AP 1.2.1 (May 2019), GeoDCAT-AP 1.0.1 and StatDCAT-AP 1.0.1 as the specifications it is based on.",
+        "alternative": "dcat-ap-1.2.1"
+      }
+    },
+    {
+      "id": "statdcat",
+      "name": "StatDCAT-AP",
+      "rq1": {
+        "role": "development",
+        "reference_document": "StatDCAT-AP 1.0.0 (2016-12-15)",
+        "base": "DCAT-AP 1.1"
+      },
+      "requirements": {
+        "reference_set": "cases/statdcat/requirements/reference-set.json",
+        "sources": [
+          {
+            "title": "StatDCAT-AP 1.0.0, development report and specification",
+            "date": "2016-12-15",
+            "path": "cases/statdcat/profile/statdcat-ap_version_1.0.0_0.pdf",
+            "availability": "included",
+            "note": "The same document is the requirement source and the profile specification."
+          }
+        ]
+      },
+      "profile": {
+        "version": "1.0.0",
+        "date": "2016-12-15",
+        "directory": "cases/statdcat/profile",
+        "source": "statdcat-ap-1.0.0",
+        "formats": {
+          "specification": "pdf",
+          "rdf_vocabulary": true,
+          "shacl": false
+        },
+        "status": "confirmed",
+        "evidence": "RQ1 pins this file at this commit; the title page gives version 1.0.0 and the date 2016-12-15."
+      },
+      "base": {
+        "id": "dcat-ap-1.1",
+        "status": "confirmed",
+        "evidence": "Section 7.1 calls the profile an extension of DCAT-AP version 1.1."
+      }
+    },
+    {
+      "id": "geodcat",
+      "name": "GeoDCAT-AP",
+      "rq1": {
+        "role": "test",
+        "reference_document": "GeoDCAT-AP 1.0 (2015-12-23)",
+        "base": "DCAT-AP 1.1"
+      },
+      "requirements": {
+        "reference_set": "cases/geodcat/requirements/reference-set.json",
+        "sources": [
+          {
+            "title": "GeoDCAT-AP 1.0, specification",
+            "date": "2015-12-23",
+            "path": "cases/geodcat/profile/geodcat-ap_1.0.pdf",
+            "availability": "included",
+            "note": "The same document is the requirement source and the profile specification."
+          }
+        ]
+      },
+      "profile": {
+        "version": "1.0",
+        "date": "2015-12-23",
+        "directory": "cases/geodcat/profile",
+        "source": "geodcat-ap-1.0",
+        "formats": {
+          "specification": "pdf, docx",
+          "rdf_vocabulary": false,
+          "shacl": false
+        },
+        "status": "confirmed",
+        "evidence": "RQ1 pins this file at this commit; every page footer reads GeoDCAT-AP v1.0, 2015-12-23."
+      },
+      "base": {
+        "id": "dcat-ap-1.1",
+        "status": "consistent",
+        "evidence": "RQ1 records DCAT-AP 1.1. The specification cites DCAT-AP as a 2015 document without a version number. It treats dct:provenance and dct:accessRights as DCAT-AP properties, and both are new in DCAT-AP 1.1. One mapping row marks foaf:page on a dataset as not in DCAT-AP, although DCAT-AP 1.1 added it."
+      }
+    },
+    {
+      "id": "healthdcat",
+      "name": "HealthDCAT-AP",
+      "rq1": {
+        "role": "test",
+        "reference_document": "HealthData@EU Pilot D6.2 (2024-09-30)",
+        "base": "DCAT-AP 3.0.0"
+      },
+      "requirements": {
+        "reference_set": "cases/healthdcat/requirements/reference-set.json",
+        "sources": [
+          {
+            "title": "HealthData@EU Pilot, Deliverable 6.2: HealthDCAT-AP, recommendations on further development and deployment for possible EU-wide uptake",
+            "date": "2024-09-30",
+            "url": "https://zenodo.org/records/15085025",
+            "path": "cases/healthdcat/requirements/d6.2-requirements-and-profile.pdf",
+            "availability": "included",
+            "licence_evidence": "cases/healthdcat/provenance/d6.2-zenodo-deposit.json"
+          }
+        ]
+      },
+      "profile": {
+        "version": "pilot draft, unversioned",
+        "date": "2024-09-20",
+        "directory": "cases/healthdcat/profile",
+        "source": "healthdcat-ap-2024-09",
+        "formats": {
+          "specification": "html",
+          "rdf_vocabulary": false,
+          "shacl": false
+        },
+        "status": "verify",
+        "evidence": "D6.1 and D6.2 both give healthdcat-ap.github.io as the place where the profile is published. That site carried no version numbers, so the snapshot is the last commit of its repository on or before the D6.2 date (20 Sep 2024; the next one is 11 Oct 2024). The profile's own terms are the same in every commit from 29 Apr 2024 to the end of 2024.",
+        "alternative": "Commit be9853dde202c6a573abfed4818c1963c1d2c426 (29 Apr 2024), the state one day before the D6.1 date. Not copied here."
+      },
+      "base": {
+        "id": "dcat-ap-3.0.0",
+        "status": "consistent",
+        "evidence": "RQ1 records DCAT-AP 3.0.0, and D6.2 refers to DCAT-AP 3.0 throughout. The draft itself says its requirements are compatible with DCAT-AP 2 and DCAT-AP 3.0.0 and shows one class diagram for each."
+      }
+    },
+    {
+      "id": "mobilitydcat",
+      "name": "mobilityDCAT-AP",
+      "rq1": {
+        "role": "test",
+        "reference_document": "NAPCORE 4.4.2.1 Requirement analysis v1.0 (2022), Table 1",
+        "base": "DCAT-AP 2.0.1"
+      },
+      "requirements": {
+        "reference_set": "cases/mobilitydcat/requirements/reference-set.json",
+        "sources": [
+          {
+            "title": "NAPCORE Requirements Analysis for a new Metadata Specification, v1.0 (Bures, Lubrich et al.)",
+            "date": "2022-06-14",
+            "url": "https://napcore.eu/wp-content/uploads/2022/08/NAPCORE-4.4.2.1-Requirement-analysis_v1.0.pdf",
+            "availability": "citation_only",
+            "note": "Redistribution rights not established; no copy in this repository. RQ1 read a 57-page PDF with SHA-256 8d02da91380cd3bdad95df6a9f076968e0bcad0ab1f1b6bd5b1d95544e71f603. Cover date 14 June 2022; the document history gives 20 June 2022 for the final release."
+          }
+        ]
+      },
+      "profile": {
+        "version": "1.0.0",
+        "date": "2023-10-16",
+        "directory": "cases/mobilitydcat/profile",
+        "source": "mobilitydcat-ap-1.0.0",
+        "formats": {
+          "specification": "html",
+          "rdf_vocabulary": true,
+          "shacl": true
+        },
+        "status": "confirmed",
+        "evidence": "RQ1 pins this file at this commit; the header reads Version 1.0.0, NAPCORE Recommendation 16 October 2023."
+      },
+      "base": {
+        "id": "dcat-ap-2.0.1",
+        "status": "confirmed",
+        "evidence": "Section 1.3 says the DCAT-AP version the document is based on is 2.0.1 of 8 June 2020."
+      }
+    }
+  ],
+  "bases": [
+    {
+      "id": "dcat-ap-1.1",
+      "name": "DCAT-AP",
+      "version": "1.1",
+      "directory": "bases/dcat-ap-1.1",
+      "source": "dcat-ap-1.1",
+      "used_by": [
+        "jrc-research",
+        "statdcat",
+        "geodcat"
+      ]
+    },
+    {
+      "id": "dcat-ap-1.2.1",
+      "name": "DCAT-AP",
+      "version": "1.2.1",
+      "directory": "bases/dcat-ap-1.2.1",
+      "source": "dcat-ap-1.2.1",
+      "used_by": [],
+      "note": "Not a base of any case as recorded in RQ1. Kept because Version 1 of DCAT-AP-JRC names it as the release it is based on; see the open point of the jrc-research case."
+    },
+    {
+      "id": "dcat-ap-2.0.1",
+      "name": "DCAT-AP",
+      "version": "2.0.1",
+      "directory": "bases/dcat-ap-2.0.1",
+      "source": "dcat-ap-2.0.1",
+      "used_by": [
+        "mobilitydcat"
+      ]
+    },
+    {
+      "id": "dcat-ap-3.0.0",
+      "name": "DCAT-AP",
+      "version": "3.0.0",
+      "directory": "bases/dcat-ap-3.0.0",
+      "source": "dcat-ap-3.0.0",
+      "used_by": [
+        "healthdcat"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "dcat-ap-jrc-1",
+      "repository": "ec-jrc/dcat-ap-jrc",
+      "commit": "c2101b0bad7b039bdc8b98098341b801d896c2eb",
+      "commit_date": "2024-05-31",
+      "upstream_directory": "docs/1.0",
+      "local_directory": "cases/jrc-research/profile",
+      "licence": "CC BY 4.0 (stated in index.html; LICENCE.md of the repository)",
+      "files": [
+        "index.html",
+        "config.js",
+        "img/dcat-ap-jrc.png",
+        "img/dcat-ap-jrc.svg",
+        "img/dcat-ap-jrc.xml",
+        "examples/agent-individual.rdf",
+        "examples/agent-organisation.rdf",
+        "examples/catalogue-record.rdf",
+        "examples/catalogue.rdf",
+        "examples/collection.rdf",
+        "examples/contact-point.rdf",
+        "examples/dataset-schema-org.json",
+        "examples/dataset.rdf",
+        "examples/distribution.rdf",
+        "examples/endpoint.rdf",
+        "examples/identifier.rdf",
+        "examples/lineage.rdf",
+        "examples/other-resource.rdf",
+        "examples/publication.rdf",
+        "examples/spatial-coverage-geometry.rdf",
+        "examples/spatial-coverage-geoname.rdf",
+        "examples/temporal-coverage.rdf",
+        "examples/usage-notes.rdf",
+        "registers/access-restrictions.rdf",
+        "registers/metadata-schemas.rdf",
+        "registers/service-protocols.html",
+        "registers/service-protocols.rdf",
+        "registers/unsd-m49.html",
+        "registers/unsd-m49.rdf"
+      ],
+      "not_included": [],
+      "note": "The whole folder. The repository keeps Version 1 here since 26 Jan 2024; before that the same document was at docs/ (first published state: commit a78efb76bf1749cdee25c494f293f98fa2a31c09, 4 Jul 2019; editorial and ReSpec fixes since). The files under examples/ are snippets that the specification page includes; they have no root element or namespace declarations and do not parse on their own.",
+      "rdf_fragments": [
+        "examples/"
+      ]
+    },
+    {
+      "id": "statdcat-ap-1.0.0",
+      "repository": "SEMICeu/StatDCAT-AP",
+      "commit": "12a2424312f615e31ee3f7db881f5f564851551f",
+      "commit_date": "2026-06-02",
+      "upstream_directory": "Release 1.0",
+      "local_directory": "cases/statdcat/profile",
+      "licence": "ISA Open Metadata Licence v1.1 (rights page of the PDF); the repository README states CC BY 4.0 unless mentioned otherwise",
+      "files": [
+        "statdcat-ap_version_1.0.0_0.pdf",
+        "statdcat-ap_version_1.0.0_0.ttl",
+        "statdcat-ap_version_1.0.0_0.png"
+      ],
+      "not_included": [
+        "statdcat-ap_version_1.0.0_0.docx (4.3 MB)",
+        "statdcat-ap_version_1.0.0_0.eap (Enterprise Architect model, 1.6 MB)"
+      ],
+      "note": "The Turtle file is dated 22 Dec 2016 (dct:created), one week after the specification."
+    },
+    {
+      "id": "geodcat-ap-1.0",
+      "repository": "SEMICeu/GeoDCAT-AP",
+      "commit": "7e7d6a82f4bd4491c68f774f185193439881ab42",
+      "commit_date": "2026-04-28",
+      "upstream_directory": "releases/1.0.0",
+      "local_directory": "cases/geodcat/profile",
+      "licence": "ISA Open Metadata Licence v1.1 (release README and rights page of the PDF)",
+      "files": [
+        "geodcat-ap_1.0.pdf",
+        "geodcat-ap_1.0.docx",
+        "README.md"
+      ],
+      "not_included": []
+    },
+    {
+      "id": "healthdcat-ap-2024-09",
+      "repository": "HealthDCAT-AP/HealthDCAT-AP.github.io",
+      "commit": "ecabf8c1c246351ba280dc007b221241d508911f",
+      "commit_date": "2024-09-20",
+      "upstream_directory": "",
+      "local_directory": "cases/healthdcat/profile",
+      "licence": "CC BY 4.0 (stated in index.html)",
+      "files": [
+        "index.html",
+        "README.md",
+        "HealthDCAT-AP 3.0.0.drawio.png",
+        "HealthDCAT-AP 2.1.1.drawio.png",
+        "Co-funded_by_the_European_Union.png",
+        "logo.png"
+      ],
+      "not_included": [],
+      "note": "The whole repository tree at this commit. The site was taken offline on 22 Sep 2025 and the specification moved to the European Commission's own platform; the repository and its history remain."
+    },
+    {
+      "id": "mobilitydcat-ap-1.0.0",
+      "repository": "mobilityDCAT-AP/mobilityDCAT-AP",
+      "commit": "fc6cb37a8aac93992ab8485a83382febe6a5605d",
+      "commit_date": "2026-10-05",
+      "upstream_directory": "releases/1.0.0",
+      "local_directory": "cases/mobilitydcat/profile",
+      "licence": "CC BY 4.0 (stated in index.html and in the release README)",
+      "files": [
+        "index.html",
+        "README.md",
+        "mobilitydcat-ap.ttl",
+        "mobilitydcat-ap.rdf",
+        "mobilitydcat-ap.jsonld",
+        "mobilitydcat-ap_shacl_shapes.ttl"
+      ],
+      "not_included": [],
+      "note": "The whole folder. Upstream changed files in it after the publication date of 16 Oct 2023: index.html last on 10 Nov 2023, the SHACL shapes on 29 Jan 2024. The repository was restructured after the pinned commit and its main branch no longer has a releases/ folder; the pinned commit still serves it."
+    },
+    {
+      "id": "dcat-ap-1.1",
+      "repository": "SEMICeu/DCAT-AP",
+      "commit": "4470b8ea907b7eb9ec55ab22befd1ecd2210ff32",
+      "commit_date": "2026-06-16",
+      "upstream_directory": "releases/1.1",
+      "local_directory": "bases/dcat-ap-1.1",
+      "licence": "ISA Open Metadata Licence v1.1 (rights page of the PDF); the repository README states CC BY 4.0 unless mentioned otherwise",
+      "files": [
+        "dcat-ap_1.1.pdf",
+        "dcat-ap_1.1.rdf",
+        "dcat-ap_1.1.jsonld",
+        "shacl-201608.zip",
+        "shacl-201706.zip"
+      ],
+      "not_included": [
+        "dcat-ap_1.1.docx",
+        "dcat-ap_1.1.bmp (class diagram, 4.1 MB)",
+        "dcat-ap_1.1.eap (Enterprise Architect model)"
+      ],
+      "note": "RQ1 notes that the PDF served for 1.1 carries a 2017 metadata date under its 2015 footers; the original 2015 bytes were not recovered. The two SHACL archives are also unpacked next to them, bytes unchanged; the 2016 archive holds a .gitignore that is left out.",
+      "extracted": {
+        "shacl-201608.zip": "bases/dcat-ap-1.1/shacl-201608",
+        "shacl-201706.zip": "bases/dcat-ap-1.1/shacl-201706"
+      }
+    },
+    {
+      "id": "dcat-ap-1.2.1",
+      "repository": "SEMICeu/DCAT-AP",
+      "commit": "4470b8ea907b7eb9ec55ab22befd1ecd2210ff32",
+      "commit_date": "2026-06-16",
+      "upstream_directory": "releases/1.2.1",
+      "local_directory": "bases/dcat-ap-1.2.1",
+      "licence": "The PDF states no licence; the repository README states CC BY 4.0 unless mentioned otherwise",
+      "files": [
+        "DCAT_AP_1.2.1.pdf",
+        "dcat-ap_1.2.1.rdf",
+        "dcat-ap_1.2.1.jsonld",
+        "dcat-ap_1.2.1_shacl_shapes.ttl",
+        "dcat-ap_1.2.1_shacl_mandatory-classes.shapes.ttl",
+        "dcat-ap_1.2.1_shacl_mdr-vocabularies.shape.ttl"
+      ],
+      "not_included": [
+        "DCAT_AP_1.2.1.docx",
+        "DCAT_AP_1.2.1.odt",
+        "DCAT-AP_1.2.1.PNG and .svg (class diagram)",
+        "dcat-ap_1.2.1.eap",
+        "Draft/ (pre-release copies)"
+      ]
+    },
+    {
+      "id": "dcat-ap-2.0.1",
+      "repository": "SEMICeu/DCAT-AP",
+      "commit": "4470b8ea907b7eb9ec55ab22befd1ecd2210ff32",
+      "commit_date": "2026-06-16",
+      "upstream_directory": "releases/2.0.1",
+      "local_directory": "bases/dcat-ap-2.0.1",
+      "licence": "The PDF states no licence; the repository README states CC BY 4.0 unless mentioned otherwise",
+      "files": [
+        "DCAT_AP_2.0.1.pdf",
+        "README.md",
+        "dcat-ap_2.0.1.rdf",
+        "dcat-ap_2.0.1.jsonld",
+        "dcat-ap_lang_2.0.1.jsonld",
+        "dcat-ap_2.0.1_shacl_shapes.ttl",
+        "dcat-ap_2.0.1_shacl_mdr-vocabularies.shape.ttl",
+        "dcat-ap_2.0.1_shacl_deprecateduris.ttl"
+      ],
+      "not_included": [
+        "DCAT_AP_2.0.1.docx",
+        "DCAT_AP_2.0.1.odt",
+        "DCAT_AP_2.0.1.png and DCAT-AP.svg (class diagram)",
+        "dcat-ap_2.0.1.eap"
+      ]
+    },
+    {
+      "id": "dcat-ap-3.0.0",
+      "repository": "SEMICeu/DCAT-AP",
+      "commit": "4470b8ea907b7eb9ec55ab22befd1ecd2210ff32",
+      "commit_date": "2026-06-16",
+      "upstream_directory": "releases/3.0.0",
+      "local_directory": "bases/dcat-ap-3.0.0",
+      "licence": "CC BY 4.0 (stated in index.html)",
+      "files": [
+        "index.html",
+        "CHANGELOG.md",
+        "context/dcat-ap.jsonld",
+        "shacl/dcat-ap-SHACL.ttl",
+        "shacl/dcat-ap-SHACL.jsonld",
+        "html/shacl/shapes.ttl",
+        "html/shacl/shapes_recommended.ttl",
+        "html/shacl/range.ttl",
+        "html/shacl/mdr-vocabularies.shape.ttl",
+        "html/shacl/imports.ttl",
+        "html/shacl/mdr_imports.ttl",
+        "html/shacl/deprecateduris.ttl"
+      ],
+      "not_included": [
+        "html/examples/ (example records)",
+        "html/overview.jpg and overview-annotated.jpg (class diagram, 1.5 MB)",
+        "html/example.js, html/callout.png"
+      ]
+    }
+  ]
+}
