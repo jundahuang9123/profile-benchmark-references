@@ -32,6 +32,10 @@ The profile releases are the ones that go with the requirement sources RQ1 froze
 
 In RQ1, jrc-research and statdcat were development cases and the other three were test cases (curator's statement of 12 November 2026).
 
+## Do the additions come from the requirements?
+
+Checked per case in [docs/additions-trace.md](docs/additions-trace.md): statdcat and geodcat trace completely, mobilitydcat takes 17 additions from GeoDCAT-AP 2.0.0, healthdcat has 7 untraced additions, and about half of DCAT-AP-JRC Version 1's additions answer requirements the 2016 paper does not state.
+
 ## Layout
 
 ```text
@@ -48,7 +52,8 @@ cases/term-check.csv      atom statements that carry a term or name their target
 cases/rq1-row-coding.csv  earlier coding of 75 rows against profile terms; not gold
 bases/<id>/               the DCAT-AP releases the profiles extend; upstream files, unchanged
 bases/rq1-registries/     the base registries RQ1's runs pin, and the 2015 PDF of DCAT-AP 1.1 behind one of them
-docs/                     data dictionary, version evidence, fork notes
+analysis/additions/       per case: each addition of the profile to its base, traced to the atoms
+docs/                     data dictionary, version evidence, fork notes, additions trace
 tools/                    fetch_upstream.py, build_views.py, validate.py
 ```
 

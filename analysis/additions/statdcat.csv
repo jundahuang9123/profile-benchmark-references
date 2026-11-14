@@ -1,0 +1,7 @@
+case,kind,class,term,profile_obligation,base_obligation,origin_in_spec,category,atoms,note
+statdcat,property,dcat:Dataset,stat:dimension,optional,,§7.2.1,traced,S-1.1,the report states the extension next to the requirement it meets
+statdcat,property,dcat:Dataset,stat:attribute,optional,,§7.2.1,traced,S-2.1,the report states the extension next to the requirement it meets
+statdcat,property,dcat:Dataset,dqv:hasQualityAnnotation,optional,,§7.2.2,traced,S-3.1;S-3.2;S-3.3,the report states the extension next to the requirement it meets
+statdcat,property,dcat:Distribution,dct:type,optional,,§7.2.3,traced,S-4.1,the report states the extension next to the requirement it meets
+statdcat,property,dcat:Dataset,stat:numSeries,optional,,§7.2.4,traced,S-5.1,the report states the extension next to the requirement it meets
+statdcat,property,dcat:Dataset,stat:statUnitMeasure,optional,,§7.2.5,traced,S-6.1,the report states the extension next to the requirement it meets

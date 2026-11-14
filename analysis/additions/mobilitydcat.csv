@@ -1,0 +1,70 @@
+case,kind,class,term,profile_obligation,base_obligation,origin_in_spec,category,atoms,note
+mobilitydcat,class,locn:Address,,,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,locn:Address,locn:adminUnitL1,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,locn:Address,locn:adminUnitL2,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,locn:Address,locn:postCode,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,locn:Address,locn:postName,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,locn:Address,locn:thoroughfare,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,foaf:Agent,foaf:mbox,mandatory,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point; raised from optional to mandatory, with no requirement asking for it"
+mobilitydcat,property,foaf:Agent,foaf:workplaceHomepage,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,foaf:Agent,foaf:phone,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,foaf:Agent,locn:address,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,foaf:Agent,org:memberOf,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,foaf:Agent,foaf:firstName,optional,,Annex A.2,untraced,,for agents of type person (spec §7); no requirement and not in GeoDCAT-AP 2.0.0
+mobilitydcat,property,foaf:Agent,foaf:surname,optional,,Annex A.2,untraced,,for agents of type person (spec §7); no requirement and not in GeoDCAT-AP 2.0.0
+mobilitydcat,class,mobilitydcatap:Assessment,,,,Annex A.2,traced,Req-31.3;Req-31.4,
+mobilitydcat,property,mobilitydcatap:Assessment,dct:issued,optional,,Annex A.2,supporting,Req-31.3,"date of an assessment, needed for its history"
+mobilitydcat,property,mobilitydcatap:Assessment,oa:hasBody,optional,,Annex A.2,supporting,Req-31.4,content of an assessment
+mobilitydcat,property,dcat:Catalog,dct:identifier,optional,,Annex A.2,profile_rule,Req-33.1,identifier guidelines; no content requirement for catalogue identifiers
+mobilitydcat,property,dcat:Catalog,adms:identifier,optional,,Annex A.2,profile_rule,Req-33.1,usage note: for a future EU-wide NAP identifier system
+mobilitydcat,property,dcat:CatalogRecord,dct:created,mandatory,,Annex A.2,traced,Req-17.1,CMC 2.2.1.1
+mobilitydcat,property,dcat:CatalogRecord,dct:publisher,optional,,Annex A.2,traced,Req-17.3,CMC 2.2.1.3
+mobilitydcat,property,skos:Concept,skos:inScheme,optional,,Annex A.2,supporting,Req-34.1,links a category to its controlled vocabulary
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:mobilityTheme,mandatory,,Annex A.2,traced,Req-19.4,CMC 2.2.2.4/2.2.2.5
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:georeferencingMethod,recommended,,Annex A.2,traced,Req-19.7;Req-24.1,CMC 2.2.2.8
+mobilitydcat,property,dcat:Dataset,dct:conformsTo,recommended,optional,Annex A.2,traced,Req-24.2,already in DCAT-AP 2.0.1 as optional; raised to recommended (reference system)
+mobilitydcat,property,dcat:Dataset,dct:rightsHolder,recommended,,Annex A.2,traced,Req-26.2,CMC 2.2.6.2
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:networkCoverage,recommended,,Annex A.2,traced,Req-23.3,CMC 2.2.4.2
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:transportMode,recommended,,Annex A.2,traced,Req-25.1,CMC 2.2.5.1
+mobilitydcat,property,dcat:Dataset,dcatap:applicableLegislation,optional,,Annex A.2,traced,Req-20.1,
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:assessmentResult,optional,,Annex A.2,traced,Req-31.4,CMC 2.2.9.3
+mobilitydcat,property,dcat:Dataset,mobilitydcatap:intendedInformationService,optional,,Annex A.2,traced,Req-19.5,CMC 2.2.2.6
+mobilitydcat,property,dcat:Dataset,dqv:hasQualityAnnotation,optional,,Annex A.2,traced,Req-31.2,CMC 2.2.9.2
+mobilitydcat,property,dcat:Distribution,mobilitydcatap:mobilityDataStandard,mandatory,,Annex A.2,traced,Req-28.4,CMC 2.2.8.4
+mobilitydcat,property,dcat:Distribution,mobilitydcatap:applicationLayerProtocol,recommended,,Annex A.2,profile_rule,Req-11.1;Req-16.1,CMC element 2.2.8.6; no content requirement in the NAPCORE table
+mobilitydcat,property,dcat:Distribution,mobilitydcatap:communicationMethod,optional,,Annex A.2,profile_rule,Req-11.1;Req-16.1,CMC element 2.2.8.7; no content requirement in the NAPCORE table
+mobilitydcat,property,dcat:Distribution,mobilitydcatap:dataFormatNotes,optional,,Annex A.2,traced,Req-30.2;Req-30.3,CMC 2.2.8.5
+mobilitydcat,property,dcat:Distribution,mobilitydcatap:grammar,optional,,Annex A.2,traced,Req-28.3,CMC 2.2.8.3
+mobilitydcat,property,dcat:Distribution,adms:sample,optional,,Annex A.2,traced,Req-29.2,
+mobilitydcat,property,dcat:Distribution,dct:temporal,optional,,Annex A.2,traced,Req-22.1,CMC 2.2.3.1/2.2.3.2
+mobilitydcat,property,dcat:Distribution,cnt:characterEncoding,optional,,Annex A.2,traced,Req-28.1,CMC 2.2.8.1; also in GeoDCAT-AP 2.0.0
+mobilitydcat,property,vcard:Kind,vcard:hasEmail,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,vcard:Kind,vcard:fn,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,vcard:Kind,vcard:hasURL,recommended,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,vcard:Kind,vcard:hasAddress,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,vcard:Kind,vcard:organization-name,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,vcard:Kind,vcard:hasTelephone,optional,,Annex A.2,inherited,Req-12.1,"also an addition of GeoDCAT-AP 2.0.0, which the change log names as a starting point"
+mobilitydcat,property,dct:LicenseDocument,dct:identifier,recommended,,Annex A.2,traced,Req-27.1,standard licence
+mobilitydcat,property,dct:LicenseDocument,rdfs:label,optional,,Annex A.2,traced,Req-27.1,licence text
+mobilitydcat,property,dct:Location,skos:inScheme,recommended,,Annex A.2,traced,Req-23.2,gazetteer of the region
+mobilitydcat,property,dct:Location,dct:identifier,recommended,,Annex A.2,traced,Req-23.2,
+mobilitydcat,property,dct:Location,skos:prefLabel,optional,,Annex A.2,traced,Req-23.2,
+mobilitydcat,class,mobilitydcatap:MobilityDataStandard,,,,Annex A.2,traced,Req-28.4,
+mobilitydcat,property,mobilitydcatap:MobilityDataStandard,owl:versionInfo,optional,,Annex A.2,traced,Req-30.1,
+mobilitydcat,property,mobilitydcatap:MobilityDataStandard,mobilitydcatap:schema,optional,,Annex A.2,traced,Req-29.1,
+mobilitydcat,class,dqv:QualityAnnotation,,,,Annex A.2,traced,Req-31.2,
+mobilitydcat,property,dqv:QualityAnnotation,oa:hasBody,optional,,Annex A.2,supporting,Req-31.2,content of the annotation
+mobilitydcat,property,dqv:QualityAnnotation,oa:hasTarget,optional,,Annex A.2,supporting,Req-31.2,what the annotation is about
+mobilitydcat,property,dct:RightsStatement,dct:type,mandatory,,Annex A.2,traced,Req-27.2;Req-27.3,conditions for access and usage; mandatory
+mobilitydcat,property,dct:RightsStatement,rdfs:label,recommended,,Annex A.2,traced,Req-27.3,
+mobilitydcat,obligation,dcat:Catalog,foaf:homepage,mandatory,recommended,§4 tables,untraced,,no requirement asks for the catalogue's home page
+mobilitydcat,obligation,dcat:Catalog,dcat:record,mandatory,optional,§4 tables,traced,Req-17.1;Req-17.3,catalogue records carry the metadata dates and the responsible party
+mobilitydcat,obligation,dcat:Catalog,dct:spatial,mandatory,recommended,§4 tables,untraced,,"Req-23.1 asks for the area of a dataset, not of the catalogue"
+mobilitydcat,obligation,dcat:CatalogRecord,dct:language,mandatory,optional,§4 tables,traced,Req-17.2,CMC 2.2.1.2
+mobilitydcat,obligation,dcat:Dataset,dcat:distribution,mandatory,recommended,§4 tables,profile_rule,Req-2.6,general: distributions described in detail
+mobilitydcat,obligation,dcat:Dataset,dct:accrualPeriodicity,mandatory,optional,§4 tables,traced,Req-31.1,CMC 2.2.9.1
+mobilitydcat,obligation,dcat:Dataset,dct:spatial,mandatory,recommended,§4 tables,traced,Req-23.1,CMC 2.2.4.1
+mobilitydcat,obligation,dcat:Dataset,dct:publisher,mandatory,recommended,§4 tables,traced,Req-26.1,CMC 2.2.6.1
+mobilitydcat,obligation,dcat:Distribution,dct:format,mandatory,recommended,§4 tables,traced,Req-28.2,CMC 2.2.8.2
+mobilitydcat,obligation,dcat:Distribution,dct:rights,mandatory,optional,§4 tables,traced,Req-27.2,CMC 2.2.7.1
+mobilitydcat,obligation,adms:Identifier,skos:notation,mandatory,optional,§4 tables,profile_rule,Req-33.1,identifier guidelines

@@ -1,0 +1,25 @@
+case,kind,class,term,profile_obligation,base_obligation,origin_in_spec,category,atoms,note
+geodcat,binding,dcat:Dataset,foaf:page,,optional,Table 2 (Core),traced,G-28.1,"resource locator with 'information' or 'search' function; the table marks it 'not in DCAT-AP', though DCAT-AP 1.1 has it; property already in DCAT-AP 1.1, the profile adds this use of it"
+geodcat,binding,dcat:Dataset,dct:type,,optional,Table 3 (Extended),traced,G-32.1,"resource type: dataset or dataset series; property already in DCAT-AP 1.1, the profile adds this use of it"
+geodcat,binding,dcat:Catalog,dct:type,,,Table 3 (Extended),traced,G-32.1;G-33.1,resource type and spatial data service type for services
+geodcat,binding,dcat:Dataset,dct:subject,,,Table 3 (Extended),traced,G-19.1,topic category
+geodcat,binding,dcat:Catalog,dc:subject,,,Table 3 (Extended),traced,G-34.1,"keyword of a service, free text"
+geodcat,binding,dcat:Catalog,dct:subject,,,Table 3 (Extended),traced,G-34.1,"keyword of a service, from a vocabulary"
+geodcat,binding,skos:Concept,skos:inScheme,,,Table 3 (Extended),traced,G-34.1,originating controlled vocabulary
+geodcat,binding,dcat:Dataset,dct:created,,,Table 3 (Extended),traced,G-16.1,date of creation
+geodcat,binding,dcat:Dataset,rdfs:comment,,,Table 3 (Extended),traced,G-26.1,"spatial resolution, as text only"
+geodcat,binding,prov:Entity,prov:wasUsedBy,,,Table 3 (Extended),traced,G-31.1,conformity
+geodcat,binding,prov:Entity,prov:wasDerivedFrom,,,Table 3 (Extended),traced,G-31.1,conformity specification
+geodcat,binding,prov:Activity,prov:generated,,,Table 3 (Extended),traced,G-31.1,degree of conformity
+geodcat,binding,dcat:Dataset,dct:creator,,,Table 3 (Extended),traced,G-27.1,responsible party in the author role
+geodcat,binding,dcat:Dataset,prov:qualifiedAttribution,,,Table 3 (Extended),traced,G-27.1,responsible party with any of the 11 roles
+geodcat,binding,prov:Attribution,dct:type,,,Table 3 (Extended),traced,G-27.1,responsible party role
+geodcat,binding,dcat:CatalogRecord,dct:identifier,,,Table 3 (Extended),traced,G-12.1,metadata file identifier
+geodcat,binding,dcat:CatalogRecord,prov:qualifiedAttribution,,,Table 3 (Extended),traced,G-8.1,metadata point of contact
+geodcat,binding,dcat:CatalogRecord,dcat:contactPoint,,,Table 3 (Extended),traced,G-8.1,metadata point of contact
+geodcat,binding,dcat:CatalogRecord,cnt:characterEncoding,,,Table 3 (Extended),traced,G-11.1,metadata character set
+geodcat,binding,dcat:Dataset,dct:conformsTo,,optional,Table 3 (Extended),traced,G-29.1;G-30.1,"coordinate and temporal reference systems; property already in DCAT-AP 1.1, the profile adds this use of it"
+geodcat,binding,dcat:Distribution,cnt:characterEncoding,,,Table 3 (Extended),traced,G-21.1,character encoding
+geodcat,binding,dcat:Distribution,adms:representationTechnique,,,Table 3 (Extended),traced,G-24.1,spatial representation type
+geodcat,binding,dcat:CatalogRecord,dct:conformsTo,,recommended,Table 2 (Core),traced,G-13.1,"metadata standard; property already in DCAT-AP 1.1, the profile adds this use of it"
+geodcat,binding,dct:Standard,owl:versionInfo,,,Table 2 (Core),traced,G-14.1,metadata standard version

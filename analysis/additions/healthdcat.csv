@@ -1,0 +1,52 @@
+case,kind,class,term,profile_obligation,base_obligation,origin_in_spec,category,atoms,note
+healthdcat,obligation,dcat:Catalog,dcatap:applicableLegislation,mandatory,optional,tabular overview,partly,H-18.1,H-18.1 is about datasets; the draft also makes it mandatory for catalogues
+healthdcat,obligation,dcat:Dataset,dct:accessRights,mandatory,optional,tabular overview,traced,H-19.1,
+healthdcat,obligation,dcat:Dataset,dcatap:applicableLegislation,mandatory,optional,tabular overview,traced,H-18.1,
+healthdcat,obligation,dcat:Dataset,dcat:contactPoint,mandatory,recommended,tabular overview,traced,H-21.1,
+healthdcat,obligation,dcat:Dataset,dcat:distribution,mandatory,recommended,tabular overview,traced,H-20.1,
+healthdcat,obligation,dcat:Dataset,dct:spatial,mandatory,recommended,tabular overview,traced,H-24.1,
+healthdcat,property,dcat:Dataset,healthdcatap:healthcategory,mandatory,,tabular overview,traced,H-5.1,EHDS Art. 33 categories
+healthdcat,property,dcat:Dataset,healthdcatap:hdab,mandatory,,tabular overview,traced,H-5.2;H-22.1,
+healthdcat,property,dcat:Dataset,healthdcatap:healththeme,mandatory,,tabular overview,traced,H-7.2,
+healthdcat,obligation,dcat:Dataset,dct:identifier,mandatory,optional,tabular overview,traced,H-1.1,
+healthdcat,obligation,dcat:Dataset,dcat:keyword,mandatory,recommended,tabular overview,traced,H-25.1,
+healthdcat,obligation,dcat:Dataset,dct:provenance,mandatory,optional,tabular overview,traced,H-26.1;H-17.1,
+healthdcat,obligation,dcat:Dataset,dct:publisher,mandatory,recommended,tabular overview,traced,H-27.1,
+healthdcat,property,dcat:Dataset,healthdcatap:publishernote,mandatory,,tabular overview,traced,H-28.1,
+healthdcat,property,dcat:Dataset,healthdcatap:publishertype,mandatory,,tabular overview,traced,H-28.2;H-5.3,
+healthdcat,property,dcat:Dataset,dpv:hasPurpose,mandatory,,tabular overview,traced,H-16.1,
+healthdcat,obligation,dcat:Dataset,adms:sample,mandatory,optional,tabular overview,partly,H-8.1,H-8.1 asks for a sample of every non-public dataset; the draft makes it mandatory for all
+healthdcat,obligation,dcat:Dataset,dcat:theme,mandatory,recommended,tabular overview,traced,H-29.1,
+healthdcat,obligation,dcat:Dataset,dct:type,mandatory,optional,tabular overview,traced,H-23.1,
+healthdcat,property,dcat:Dataset,healthdcatap:analytics,recommended,,tabular overview,traced,H-14.1,
+healthdcat,property,dcat:Dataset,healthdcatap:hasCodeValues,recommended,,tabular overview,traced,H-7.4;H-5.9,
+healthdcat,property,dcat:Dataset,healthdcatap:hasCodingSystem,recommended,,tabular overview,traced,H-7.3,
+healthdcat,obligation,dcat:Dataset,dct:conformsTo,recommended,optional,tabular overview,traced,H-30.1,
+healthdcat,obligation,dcat:Dataset,foaf:page,recommended,optional,tabular overview,traced,H-31.1,
+healthdcat,obligation,dcat:Dataset,dct:accrualPeriodicity,recommended,optional,tabular overview,traced,H-68.1,
+healthdcat,obligation,dcat:Dataset,dct:isReferencedBy,recommended,optional,tabular overview,traced,H-32.1,
+healthdcat,obligation,dcat:Dataset,dcat:landingPage,recommended,optional,tabular overview,traced,H-34.1,
+healthdcat,obligation,dcat:Dataset,dct:language,recommended,optional,tabular overview,traced,H-35.1,
+healthdcat,property,dcat:Dataset,dpv:hasLegalBasis,recommended,,tabular overview,traced,H-16.2,
+healthdcat,property,dcat:Dataset,healthdcatap:maxtypicalage,recommended,,tabular overview,traced,H-5.6,
+healthdcat,property,dcat:Dataset,healthdcatap:mintypicalage,recommended,,tabular overview,traced,H-5.5,
+healthdcat,property,dcat:Dataset,healthdcatap:numberOfRecords,recommended,,tabular overview,traced,H-37.1,
+healthdcat,property,dcat:Dataset,healthdcatap:numberOfUniqueIndividuals,recommended,,tabular overview,traced,H-37.2;H-5.7,
+healthdcat,property,dcat:Dataset,dpv:hasPersonalData,recommended,,tabular overview,traced,H-5.4,
+healthdcat,property,dcat:Dataset,healthdcatap:populationcoverage,recommended,,tabular overview,traced,H-36.1,
+healthdcat,property,dcat:Dataset,dqv:hasQualityannotation,recommended,,tabular overview,traced,H-15.1;H-5.8,spelt with a lower-case 'a' in the draft
+healthdcat,obligation,dcat:Dataset,dct:relation,recommended,optional,tabular overview,traced,H-32.2,
+healthdcat,obligation,dcat:Dataset,dct:source,recommended,optional,tabular overview,traced,H-33.1,
+healthdcat,obligation,dcat:Dataset,dcat:temporalResolution,recommended,optional,tabular overview,traced,H-39.1,
+healthdcat,property,dcat:Dataset,dct:alternative,optional,,tabular overview,untraced,,alternative title; no requirement in D6.2
+healthdcat,property,dcat:Dataset,dcat:isVersionOf,optional,,tabular overview,partly,H-41.1,"H-41.1 asks for the version designation, not links between versions"
+healthdcat,property,dcat:Dataset,healthdcatap:retentionPeriod,optional,,tabular overview,traced,H-40.1,
+healthdcat,obligation,dcat:Dataset,dcat:inSeries,recommended,optional,tabular overview,untraced,,no requirement on dataset series
+healthdcat,property,dcat:Dataset,dcat:prev,recommended,,tabular overview,untraced,,DCAT 3 series navigation; no requirement in D6.2
+healthdcat,property,dcat:Dataset,dcat:next,optional,,tabular overview,untraced,,DCAT 3 series navigation; no requirement in D6.2
+healthdcat,obligation,dcat:DatasetSeries,dcatap:applicableLegislation,mandatory,optional,tabular overview,partly,H-18.1,H-18.1 is about datasets
+healthdcat,obligation,dcat:DatasetSeries,dct:temporal,recommended,optional,tabular overview,partly,H-38.1,H-38.1 is about datasets
+healthdcat,property,dcat:DatasetSeries,dcat:first,optional,,tabular overview,untraced,,DCAT 3 series navigation; no requirement in D6.2
+healthdcat,property,dcat:DatasetSeries,dcat:last,optional,,tabular overview,untraced,,DCAT 3 series navigation; no requirement in D6.2
+healthdcat,property,dcat:DatasetSeries,dcat:seriesMember,optional,,tabular overview,untraced,,DCAT 3 series navigation; no requirement in D6.2
+healthdcat,obligation,dcat:Distribution,dcatap:applicableLegislation,mandatory,optional,tabular overview,partly,H-18.1,H-18.1 is about datasets

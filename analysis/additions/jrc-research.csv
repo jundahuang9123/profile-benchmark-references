@@ -1,0 +1,72 @@
+case,kind,class,term,profile_obligation,base_obligation,origin_in_spec,category,atoms,note
+jrc-research,property,Catalogue,dcat:contactPoint,mandatory,,"class table, 'contact point'",traced,JRC-7.1,requirement link in Version 1: req-agent-roles; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Catalogue,dct:identifier,recommended,,"class table, 'identifier'",traced,JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,requirement link in Version 1: req-identifiers
+jrc-research,property,Catalogue,dct:alternative,recommended,,"class table, 'acronym'",other_requirement,,requirement link in Version 1: req-acronyms
+jrc-research,property,Catalogue,owl:sameAs,recommended,,"class table, 'other identifier'",traced,JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,requirement link in Version 1: req-identifiers
+jrc-research,property,Dataset,dct:bibliographicCitation,mandatory,,"class table, 'bibliographic citation'",traced,JRC-6.4,requirement link in Version 1: req-data-citation
+jrc-research,property,Dataset,dct:creator,mandatory,,"class table, 'individual contributor'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation; the specification marks the term as taken from GeoDCAT-AP"
+jrc-research,property,Dataset,dct:creator,mandatory,,"class table, 'corporate contributor'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation; the specification marks the term as taken from GeoDCAT-AP"
+jrc-research,property,Dataset,dc:creator,mandatory,,"class table, 'contributor(s)'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation"
+jrc-research,property,Dataset,adms:status,recommended,,"class table, 'status'",other_requirement,,requirement link in Version 1: req-dataset-status; the specification marks the term as taken from StatDCAT-AP
+jrc-research,property,Dataset,dct:isReferencedBy,recommended,,"class table, 'publication'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Dataset,vann:usageNote,optional,,"class table, 'usage notes'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Dataset,dct:isPartOf,optional,,"class table, 'catalogue'",other_requirement,,requirement link in Version 1: req-dataset-catalogue
+jrc-research,property,Dataset,dct:conformsTo,optional,,"class table, 'data policy'",traced,JRC-10.1,requirement link in Version 1: req-dataset-quality-conformance
+jrc-research,property,Contact point,vcard:hasEmail,conditional,,"class table, 'contact email'",untraced,,requirement link in Version 1: none; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Contact point,vcard:hasURL,conditional,,"class table, 'contact page'",untraced,,requirement link in Version 1: none; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Individual,foaf:givenName,mandatory,,"class table, 'given name'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation"
+jrc-research,property,Individual,foaf:familyName,mandatory,,"class table, 'family name'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation"
+jrc-research,property,Individual,foaf:name,mandatory,,"class table, 'formatted name'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1;JRC-6.4,"requirement link in Version 1: req-across-disciplines, req-data-citation"
+jrc-research,property,Individual,dct:identifier,recommended,,"class table, 'identifier'",traced,JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,requirement link in Version 1: req-identifiers
+jrc-research,property,Individual,owl:sameAs,recommended,,"class table, 'other identifier'",traced,JRC-6.4;JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,"requirement link in Version 1: req-data-citation, req-identifiers"
+jrc-research,property,Individual,foaf:mbox,optional,,"class table, 'email'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Organisation,foaf:name,mandatory,,"class table, 'name'",untraced,,requirement link in Version 1: none
+jrc-research,property,Organisation,dct:identifier,recommended,,"class table, 'identifier'",traced,JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,requirement link in Version 1: req-identifiers
+jrc-research,property,Organisation,dct:alternative,recommended,,"class table, 'acronym'",untraced,,requirement link in Version 1: none
+jrc-research,property,Organisation,foaf:homepage,recommended,,"class table, 'home page'",untraced,,requirement link in Version 1: none
+jrc-research,property,Organisation,owl:sameAs,recommended,,"class table, 'other identifier'",traced,JRC-6.4;JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,"requirement link in Version 1: req-data-citation, req-identifiers"
+jrc-research,property,Organisation,org:subOrganizationOf,recommended,,"class table, 'parent organisation'",untraced,,requirement link in Version 1: none
+jrc-research,property,Organisation,foaf:logo,optional,,"class table, 'logo'",traced,JRC-6.1;JRC-6.2;JRC-6.3;JRC-6.5,requirement link in Version 1: req-identifiers
+jrc-research,property,Distribution,dct:accessRights,mandatory,,"class table, 'access restrictions'",other_requirement,,requirement link in Version 1: req-distribution-access-restrictions
+jrc-research,property,Distribution,dct:type,conditional,,"class table, 'type'",traced,JRC-8.1;JRC-8.2,requirement link in Version 1: req-distribution-types-and-functions; the specification marks the term as taken from StatDCAT-AP
+jrc-research,property,Distribution,dct:type,conditional,,"class table, 'function'",traced,JRC-8.1;JRC-8.2,requirement link in Version 1: req-distribution-types-and-functions
+jrc-research,property,Publication,dct:title,mandatory,,"class table, 'title'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:creator,conditional,,"class table, 'individual author'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:creator,conditional,,"class table, 'corporate author'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dc:creator,mandatory,,"class table, 'author(s)'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:publisher,mandatory,,"class table, 'publisher'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dc:publisher,mandatory,,"class table, 'publisher(s)'",untraced,,requirement link in Version 1: none
+jrc-research,property,Publication,dct:issued,mandatory,,"class table, 'publication year'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:identifier,recommended,,"class table, 'identifier'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,owl:sameAs,recommended,,"class table, 'other identifier'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:bibliographicCitation,recommended,,"class table, 'bibliographic citation'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:type,recommended,,"class table, 'type'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Publication,dct:abstract,optional,,"class table, 'abstract'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
+jrc-research,property,Endpoint,dct:title,mandatory,,"class table, 'title'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Endpoint,dcat:contactPoint,mandatory,,"class table, 'contact point'",traced,JRC-7.1,"requirement link in Version 1: req-agent-roles, req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP"
+jrc-research,property,Endpoint,dct:publisher,mandatory,,"class table, 'publisher'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Endpoint,dct:isPartOf,mandatory,,"class table, 'catalogue'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Endpoint,dcat:dataset,mandatory,,"class table, 'dataset'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Endpoint,dct:conformsTo,mandatory,,"class table, 'protocol'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints
+jrc-research,property,Endpoint,adms:supportedSchema,mandatory,,"class table, 'supported schema'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints
+jrc-research,property,Endpoint,dct:identifier,recommended,,"class table, 'identifier'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints
+jrc-research,property,Endpoint,dct:alternative,recommended,,"class table, 'acronym'",other_requirement,,"requirement link in Version 1: req-acronyms, req-catalogue-endpoints"
+jrc-research,property,Endpoint,dct:description,recommended,,"class table, 'description'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Endpoint,dct:isPartOf,optional,,"class table, 'collection'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints
+jrc-research,property,Endpoint,dcat:record,optional,,"class table, 'catalogue record'",other_requirement,,requirement link in Version 1: req-catalogue-endpoints; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Collection,dcat:contactPoint,mandatory,,"class table, 'contact point'",traced,JRC-7.1,"requirement link in Version 1: req-agent-roles, req-dataset-collections; the specification marks the term as taken from GeoDCAT-AP"
+jrc-research,property,Collection,dct:identifier,recommended,,"class table, 'identifier'",other_requirement,,requirement link in Version 1: req-dataset-collections
+jrc-research,property,Collection,dct:alternative,recommended,,"class table, 'acronym'",other_requirement,,"requirement link in Version 1: req-acronyms, req-dataset-collections"
+jrc-research,property,Collection,owl:sameAs,recommended,,"class table, 'other identifier'",traced,JRC-6.4,requirement link in Version 1: req-data-citation
+jrc-research,property,Catalogue record,adms:status,mandatory,,"class table, 'status'",untraced,,requirement link in Version 1: none
+jrc-research,property,Catalogue record,dcat:contactPoint,mandatory,,"class table, 'contact point'",traced,JRC-7.1,requirement link in Version 1: req-agent-roles; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Catalogue record,dct:identifier,recommended,,"class table, 'identifier'",untraced,,requirement link in Version 1: none; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Other resource,dct:title,mandatory,,"class table, 'title'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dcat:accessURL,conditional,,"class table, 'access URL'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dcat:downloadURL,conditional,,"class table, 'download URL'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dct:description,recommended,,"class table, 'description'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dct:format,recommended,,"class table, 'format'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dct:license,optional,,"class table, 'licence'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Other resource,dct:accessRights,optional,,"class table, 'access restrictions'",other_requirement,,requirement link in Version 1: req-dataset-other-resources
+jrc-research,property,Lineage,rdfs:label,mandatory,,"class table, 'label'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines; the specification marks the term as taken from GeoDCAT-AP
+jrc-research,property,Usage notes,rdfs:label,mandatory,,"class table, 'label'",traced,JRC-1.1;JRC-2.1;JRC-3.1;JRC-4.1;JRC-5.1,requirement link in Version 1: req-across-disciplines
