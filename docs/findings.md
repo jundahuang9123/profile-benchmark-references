@@ -10,7 +10,7 @@ Details: [versions.md](versions.md), [bases/README.md](../bases/README.md).
 2. The terms RQ1 coded for the requirements are in the stored profiles: jrc-research 5 of 5, mobilitydcat 58 of 58, healthdcat 31 of 34. The 3 Health terms missing are in D6.2 but in no state of the draft from April 2024 to September 2025.
 3. jrc-research: the requirements are from a 2016 paper, the earliest public specification is Version 1 of July 2019, and nothing from 2016 was found. Version 1 names DCAT-AP 1.2.1 as its base, while RQ1 uses 1.1, so a delta against 1.1 also holds what DCAT-AP gained up to 1.2.1.
 4. healthdcat: the draft has no version numbers and is taken by date (20 September 2024). Its tables are the same on 30 October 2024. Its first SHACL shapes date from February 2025.
-5. DCAT-AP 1.1: the PDF the SEMIC repository serves has 2017 document metadata; RQ1 uses the archived 2015 final PDF. The SEMIC 1.1 shapes declare version 1.2, come in two draft SHACL dialects and have no `sh:targetClass`.
+5. DCAT-AP 1.1: the PDF the SEMIC repository serves has 2017 document metadata; RQ1 uses the archived 2015 final PDF. The SEMIC 1.1 shapes declare version 1.2 and have no `sh:targetClass`; the 2016 set uses a draft of SHACL, the 2017 set `sh:NodeShape` and `sh:path`.
 6. RQ1's DCAT-AP 3.0.0 registry models the 15 main classes only and lacks `time:hasBeginning`, `time:hasEnd` and `dct:isPartOf` on Catalogue; used alone, it makes supporting classes look like additions.
 
 ## Origin of the profiles and their additions
