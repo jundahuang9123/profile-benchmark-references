@@ -45,6 +45,7 @@ The bases as the RQ1 workbench uses them. Every RQ1 run records the id and SHA-2
 - `dcat-ap-1.1.0.json` (jrc-research, statdcat, geodcat), `dcat-ap-2.0.1.json` (mobilitydcat), `dcat-ap-3.0.0.json` (healthdcat): per class, each property with obligation, maximum cardinality, range, vocabulary, labels and usage note. They are comparison registries, not SHACL validators.
 - `dcat-ap-1.1-source/dcat-ap_1.1.pdf`: the archived final DCAT-AP 1.1 (2015-10-23, status Final) from which the 1.1 registry was parsed. The 2.0.1 and 3.0.0 registries were built from the SEMIC files stored in the folders above.
 - Copied from the RQ1 workbench (`profile-requirements-extraction`, commit `8419bc8`, folder `requirement-reuse-service/config/base_profiles`).
+- Gaps found when comparing the HealthDCAT-AP draft with the 3.0.0 registry (14 November 2026): the registry models the 15 main classes only, so supporting classes of DCAT-AP 3.0.0 (Kind, Document, Rights statement, Standard, Attribution, Activity and others) look like additions if it is used alone. It also lacks `time:hasBeginning` and `time:hasEnd` on Period of time, and `dct:isPartOf` on Catalogue, which the 3.0.0 range shapes have. Check a candidate addition against the specification or the shapes in `dcat-ap-3.0.0/` before counting it.
 
 ## Not copied
 

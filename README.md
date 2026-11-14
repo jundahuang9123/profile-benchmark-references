@@ -34,7 +34,7 @@ In RQ1, jrc-research and statdcat were development cases and the other three wer
 
 ## Do the additions come from the requirements?
 
-Checked per case in [docs/additions-trace.md](docs/additions-trace.md): statdcat and geodcat trace completely, mobilitydcat takes 17 additions from GeoDCAT-AP 2.0.0, healthdcat has 7 untraced additions, and about half of DCAT-AP-JRC Version 1's additions answer requirements the 2016 paper does not state.
+All findings of this work are listed in [docs/findings.md](docs/findings.md). Checked per case in [docs/additions-trace.md](docs/additions-trace.md): statdcat and geodcat trace completely, mobilitydcat takes 17 additions from GeoDCAT-AP 2.0.0, healthdcat has 7 untraced additions, and about half of DCAT-AP-JRC Version 1's additions answer requirements the 2016 paper does not state.
 
 ## Layout
 
@@ -61,7 +61,7 @@ Every file in a `profile/` or `bases/<id>/` folder is a copy of an upstream file
 
 ## Using it
 
-- **Input.** The `statement` of an atom is the requirement in one sentence. No statement carries an IRI or a prefixed name. Two system atoms name their target profile (`cases/term-check.csv`).
+- **Input.** The `statement` of an atom is the requirement in one sentence. No statement carries an IRI or a prefixed name. Two system atoms name their target profile, G-46.1 and Req-39.2 (`cases/term-check.csv`).
 - **Held out.** Everything else stays on the evaluator's side: the other fields of an atom (several quote the profile or name its terms), the `profile/` folders, `cases/rq1-row-coding.csv` and the READMEs. A method may see the base of a case; it must not see the target profile.
 - **Reference.** A generated profile is compared with the difference between the published profile and its base. That difference is not in this repository yet.
 - **Selection.** `stratum`, `status_in_source`, `relation_to_base` and `scored_by_default` let a run choose its atoms. They are RQ1's labels; which atoms RQ2 uses is not decided here.
